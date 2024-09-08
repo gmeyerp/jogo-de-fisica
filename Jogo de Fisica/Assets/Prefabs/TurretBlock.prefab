@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6745763576287495475}
   - component: {fileID: 3706360945541315884}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TurretBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 2063751870258818014}
   - component: {fileID: 3655932471247747158}
   - component: {fileID: 7814455675558124931}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 8754803891904735611}
   - component: {fileID: 2621001733066921781}
   - component: {fileID: 333619692280122121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8210562288151461214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,6 +327,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 943511091d189fa4a8ca28ad6373d4f2, type: 3}
       propertyPath: m_Name
       value: TurretBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 943511091d189fa4a8ca28ad6373d4f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
