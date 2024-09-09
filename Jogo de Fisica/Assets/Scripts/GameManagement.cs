@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System;
 
 public class GameManagement : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class GameManagement : MonoBehaviour
     Vector3 lastSafePosition;
     [SerializeField] int playerHealth;
     [SerializeField] int playerMaxHealth;
+    GameCanvas gameCanvas;
     // Start is called before the first frame update
     void Awake()
     {
@@ -30,11 +33,51 @@ public class GameManagement : MonoBehaviour
 
     public void ReduceHealth()
     {
-        Debug.Log("Take Damage");
         playerHealth--;
+        gameCanvas.UpdateHealth(playerHealth, false);
         if (playerHealth <= 0)
         {
-            //GameOver()
+            GameOver();
         }
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOverScene");
+        Destroy(gameObject);
+    }
+
+    public void RecoverHealth()
+    {
+        if(playerHealth < playerMaxHealth)
+        {
+            playerHealth++;
+            Debug.Log(playerHealth);
+            try
+            {
+                gameCanvas.UpdateHealth(playerHealth, true);
+            }
+            catch (Exception E)
+            {
+                Debug.Log(E.Message);
+                gameCanvas.UpdateHealth(playerHealth - 1, true);
+            }
+        }         
+    }
+
+    public void Victory()
+    {
+        SceneManager.LoadScene("VictoryScene");
+        Destroy(gameObject);
+    }
+
+    public int GetPlayerHealth()
+    {
+        return playerHealth;
+    }
+
+    public void BecomeGameCanvas(GameCanvas gameCanvas)
+    {
+        this.gameCanvas = gameCanvas;
     }
 }
