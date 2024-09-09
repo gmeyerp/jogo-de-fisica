@@ -15,5 +15,10 @@ public class UIButtons : MonoBehaviour
         Application.Quit();
     }
 
+    public void ReturnMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 
 }

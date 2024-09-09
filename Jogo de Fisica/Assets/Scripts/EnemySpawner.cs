@@ -13,6 +13,8 @@ public class EnemySpawner : MonoBehaviour
     float wavesTimer;
     int enemiesOnMap = 0;
     int enemyCounter = 0;
+    int wavesCounter = 0;
+    int wavesToWin = 4;
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,13 +30,18 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(enemiesOnMap);
         if(enemiesOnMap == 0)
         {
+            if (wavesCounter > wavesToWin)
+            {
+                GameManagement.instance.Victory();
+            }
+
             Debug.Log("Wave Ended");
             wavesTimer -= Time.deltaTime;
             if (wavesTimer < 0)
             {
+                wavesCounter++;
                 wavesTimer = timeBetweenWaves;
                 enemyCounter = 0;
                 enemiesOnMap = enemyPrefabs.Count;
@@ -46,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
     public void SendWaves()
     {
         Instantiate(enemyPrefabs[enemyCounter], levelWaypoints[0].position, enemyPrefabs[0].transform.rotation);
-        //enemyPrefabs.Remove(enemyPrefabs[0]);
+        //enemyPrefabs.Remove(enemyPrefabs[0]); //Funcionamento 
         
         enemyCounter++;
 
