@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System;
 
 public class GameCanvas : MonoBehaviour
 {
-    public static GameCanvas instance;
     [SerializeField] Image[] heartSprites;
     [SerializeField] Sprite fullHeart;
     [SerializeField] Sprite emptyHeart;
+    [SerializeField] TextMeshProUGUI moneyText;
 
     // Start is called before the first frame update
     void OnEnable()
     {
         GameManagement.instance.BecomeGameCanvas(this);
+        UpdateMoney();
     }
     public void UpdateHealth(int value, bool increase)
     {
@@ -24,5 +26,10 @@ public class GameCanvas : MonoBehaviour
             heartSprites[value].sprite = fullHeart;        
         else
             heartSprites[value].sprite = emptyHeart;        
+    }
+
+    public void UpdateMoney()
+    {
+        moneyText.text = "X" + GameManagement.instance.GetMoney();
     }
 }

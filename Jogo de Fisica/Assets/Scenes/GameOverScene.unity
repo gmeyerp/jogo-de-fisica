@@ -953,7 +953,7 @@ GameObject:
   - component: {fileID: 1687889588}
   - component: {fileID: 1687889587}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,7 +1025,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1357566730}
         m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: ReturnMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

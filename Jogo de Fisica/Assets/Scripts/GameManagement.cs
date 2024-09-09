@@ -10,6 +10,7 @@ public class GameManagement : MonoBehaviour
     Vector3 lastSafePosition;
     [SerializeField] int playerHealth;
     [SerializeField] int playerMaxHealth;
+    [SerializeField] int money = 0;
     GameCanvas gameCanvas;
     // Start is called before the first frame update
     void Awake()
@@ -79,5 +80,16 @@ public class GameManagement : MonoBehaviour
     public void BecomeGameCanvas(GameCanvas gameCanvas)
     {
         this.gameCanvas = gameCanvas;
+    }
+
+    public void ChangeMoney (int amount)
+    {
+        money += amount;
+        gameCanvas.UpdateMoney();
+    }
+
+    public int GetMoney()
+    {
+        return money;
     }
 }
