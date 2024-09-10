@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: -2640208906844572657}
-  lifeSpan: 0
+  lifeSpan: 1
 --- !u!54 &-2640208906844572657
 Rigidbody:
   m_ObjectHideFlags: 0
