@@ -9,7 +9,7 @@ public class FallTrigger : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            PlayerMovement.instance.ApplyDamage();
+            PlayerMovement.instance.TakeDamage();
             PlayerMovement.instance.transform.position = GameManagement.instance.GetSafePosition();
         }
     }

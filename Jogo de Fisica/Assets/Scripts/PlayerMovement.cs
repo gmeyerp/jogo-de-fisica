@@ -160,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
         isInvincible = false;
     }
 
-    public void ApplyDamage()
+    public void TakeDamage()
     {
         if (!isInvincible)
         {

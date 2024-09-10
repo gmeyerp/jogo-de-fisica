@@ -16,13 +16,10 @@ public class Turret : MonoBehaviour
 
     private void Update()
     {
-        if (weaponCooldownLeft > 0)
-        {
-            if (weaponCooldownLeft > Time.deltaTime)
-            { weaponCooldownLeft -= Time.deltaTime; }
-            else
-            { weaponCooldownLeft = 0; }
-        }
+        if (weaponCooldownLeft > Time.deltaTime)
+        { weaponCooldownLeft -= Time.deltaTime; }
+        else
+        { weaponCooldownLeft = 0; }
 
         if (area.TargetCount > 0)
         {

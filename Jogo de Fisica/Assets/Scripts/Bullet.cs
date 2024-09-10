@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private new Rigidbody rigidbody;
 
-    [SerializeField] private float lifeSpan = 5;
+    [SerializeField] private float lifeSpan = 5f;
     private float lifeSpanLeft;
     private void Awake()
     {
@@ -15,15 +15,11 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if (lifeSpanLeft > 0)
+        if (lifeSpanLeft > Time.deltaTime)
+        { lifeSpanLeft -= Time.deltaTime; }
+        else
         {
-            if (lifeSpanLeft > Time.deltaTime)
-            { lifeSpanLeft -= Time.deltaTime; }
-            else
-            {
-                lifeSpanLeft = 0;
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 
