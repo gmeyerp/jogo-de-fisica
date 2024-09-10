@@ -1389,6 +1389,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 403790998}
     m_Modifications:
+    - target: {fileID: 4965550926115645835, guid: a5fa6bf7ba6dbc7419d21189cf6f5f77, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b4a71835b65d784496b39c57d488444, type: 2}
     - target: {fileID: 6745763576287495475, guid: a5fa6bf7ba6dbc7419d21189cf6f5f77, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.0000005
@@ -2058,6 +2062,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 403790998}
     m_Modifications:
+    - target: {fileID: 4965550926115645835, guid: a5fa6bf7ba6dbc7419d21189cf6f5f77, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b4a71835b65d784496b39c57d488444, type: 2}
     - target: {fileID: 6745763576287495475, guid: a5fa6bf7ba6dbc7419d21189cf6f5f77, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.000001
@@ -3480,6 +3488,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 403790998}
     m_Modifications:
+    - target: {fileID: 4965550926115645835, guid: a5fa6bf7ba6dbc7419d21189cf6f5f77, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b4a71835b65d784496b39c57d488444, type: 2}
     - target: {fileID: 6745763576287495475, guid: a5fa6bf7ba6dbc7419d21189cf6f5f77, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.000001
@@ -4024,6 +4036,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 403790998}
     m_Modifications:
+    - target: {fileID: 4965550926115645835, guid: a5fa6bf7ba6dbc7419d21189cf6f5f77, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b4a71835b65d784496b39c57d488444, type: 2}
     - target: {fileID: 6745763576287495475, guid: a5fa6bf7ba6dbc7419d21189cf6f5f77, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.000001
@@ -4268,6 +4284,7 @@ MonoBehaviour:
   - {fileID: 5327390895979545917, guid: bac9eeae5d513004d8ba96ef09d960bd, type: 3}
   - {fileID: 5327390895979545917, guid: bac9eeae5d513004d8ba96ef09d960bd, type: 3}
   - {fileID: 5327390895979545917, guid: bac9eeae5d513004d8ba96ef09d960bd, type: 3}
+  - {fileID: 5327390895979545917, guid: bac9eeae5d513004d8ba96ef09d960bd, type: 3}
   levelWaypoints:
   - {fileID: 525569828}
   - {fileID: 1838130353}
@@ -4277,7 +4294,7 @@ MonoBehaviour:
   - {fileID: 712977603}
   - {fileID: 1879404351}
   newEnemy: {fileID: 5327390895979545917, guid: bac9eeae5d513004d8ba96ef09d960bd, type: 3}
-  timeBetweenEnemies: 2
+  timeBetweenEnemies: 1
   timeBetweenWaves: 5
 --- !u!4 &2004859476
 Transform:
