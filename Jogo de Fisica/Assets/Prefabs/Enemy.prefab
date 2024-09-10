@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   health: 5
-  speed: 2
+  speed: 3
   rb: {fileID: 3764433093470450743}
 --- !u!54 &3764433093470450743
 Rigidbody:
