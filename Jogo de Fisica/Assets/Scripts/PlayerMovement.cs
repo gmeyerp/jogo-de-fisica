@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
-        
+
         if (collision.collider.gameObject.TryGetComponent(out TurretBlock turret))
         {
             Mount(turret);
@@ -112,7 +112,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.gameObject.layer == 7)
         {
-            GameManagement.instance.SetSafePosition(collision.collider.gameObject.transform.position - Vector3.forward);
+            if (!collision.collider.gameObject.TryGetComponent<TurretBlock>(out _))
+            {
+                GameManagement.instance.SetSafePosition(collision.collider.gameObject.transform.position - Vector3.forward);
+            }
         }
     }
 
@@ -133,19 +136,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Mount(TurretBlock block)
     {
-        block.Mount(transform);
         mount = block;
+        
         rb.isKinematic = true;
+        block.Mount(transform);
     }
 
     private void Dismount()
     {
         mount.Dismount();
-        mount = null;
         rb.isKinematic = false;
 
         float dismountForce = jumpForce * 1.2f;
-        Launch(/*mountVelocity + */(Vector3.up * dismountForce));
+        Launch(/*mount.Velocity + */(Vector3.up * dismountForce));
+
+        mount = null;
     }
 
     IEnumerator InvincibilityOn(float time)
