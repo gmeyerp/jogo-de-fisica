@@ -1633,7 +1633,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 10
   invincibilityTime: 1
-  actions: {fileID: -944628639613478452, guid: 3594801306f67a145919ebfca3815762, type: 3}
+  inputActions: {fileID: -944628639613478452, guid: 3594801306f67a145919ebfca3815762, type: 3}
 --- !u!1001 &1257424921
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,11 +11,6 @@ public class TurretArea : MonoBehaviour
         targets = new List<TurretTarget>();
     }
 
-    private void Update()
-    {
-        Debug.Log($"In range: {targets.Count}");
-    }
-
     public void Enter(TurretTarget gameObject)
     {
         targets.Add(gameObject);

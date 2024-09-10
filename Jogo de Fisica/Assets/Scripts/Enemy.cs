@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
 
     void DealDamage()
     {
-        PlayerMovement.instance.TakeDamage();
+        PlayerMovement.instance.ApplyDamage();
     }
 
     public void Die()

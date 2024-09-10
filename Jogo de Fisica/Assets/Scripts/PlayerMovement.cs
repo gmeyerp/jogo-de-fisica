@@ -3,76 +3,108 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
+
     [Header("Movement")]
     [SerializeField] Rigidbody rb;
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
     Vector3 movement;
     bool isGrounded;
+    bool isMovementEnabled;
+    TurretBlock mount;
 
     [Header("Damage")]
     [SerializeField] float invincibilityTime = 1f;
     bool isInvincible;
+
     #region Actions
-    public InputActionAsset actions;
-    InputActionMap player;
+    public InputActionAsset inputActions;
+    InputActionMap playerActions;
     InputAction moveAction;
-    InputAction jump;
+    InputAction jumpAction;
     #endregion
-    // Start is called before the first frame update
+
     void Awake()
     {
         if (instance == null)
-            instance = this;
+        { instance = this; }
         else
-            Destroy(this.gameObject);
+        { Destroy(this.gameObject); }
 
-        //player = actions.FindActionMap("Player"); //Testar isso depois para não repetir código
-        moveAction = actions.FindActionMap("Player").FindAction("Move");
-        actions.FindActionMap("Player").FindAction("Jump").performed += OnJump;
+        playerActions = inputActions.FindActionMap("Player");
+
+        moveAction = playerActions.FindAction("Move");
+        playerActions.FindAction("Jump").performed += OnJump;
+
+        EnableMovement();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector2 moveVector = moveAction.ReadValue<Vector2>();
-        movement = new Vector3(moveVector.x, 0, moveVector.y);
+        Vector2 movementInput = moveAction.ReadValue<Vector2>();
+        movement = new Vector3(movementInput.x, 0, movementInput.y);
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(transform.position + movement * speed * Time.fixedDeltaTime);
+        HandleMovement();
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    private void HandleMovement()
     {
-        if (isGrounded)
+        if (!isMovementEnabled) return;
+        if (movement == Vector3.zero) return;
+
+        if (mount == null)
         {
-            //GameManagement.instance.SetSafePosition(transform.position); nao parece necessario com OnCollisionExit
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange); // Se debuffs afetarem o peso isso deve ser alterado
+            Move(movement * speed);
         }
-        isGrounded = false;
+        else
+        {
+            mount.Move(movement * speed);
+        }
+    }
+
+    private void OnJump(InputAction.CallbackContext context)
+    {
+        if (!isMovementEnabled) return;
+        if (!isGrounded) return;
+
+
+        if (mount == null)
+        {
+            Jump();
+        }
+        else
+        {
+            Dismount();
+        }
     }
 
     void OnEnable()
     {
-        actions.FindActionMap("Player").Enable();
+        inputActions.FindActionMap("Player").Enable();
     }
     void OnDisable()
     {
-        actions.FindActionMap("Player").Disable();
+        inputActions.FindActionMap("Player").Disable();
     }
 
-    public void TakeDamage()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (!isInvincible) 
+        if (collision.collider.gameObject.layer == 7)
         {
-            StartCoroutine(InvincibilityOn(invincibilityTime));
-            GameManagement.instance.ReduceHealth();
+            isGrounded = true;
+        }
+        
+        if (collision.collider.gameObject.TryGetComponent(out TurretBlock turret))
+        {
+            Mount(turret);
         }
     }
 
@@ -84,12 +116,36 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void Move(Vector3 force)
     {
-        if (collision.collider.gameObject.layer == 7)
-        {
-            isGrounded = true;
-        }
+        rb.MovePosition(transform.position + force * Time.fixedDeltaTime);
+    }
+
+    private void Launch(Vector3 force)
+    {
+        //GameManagement.instance.SetSafePosition(transform.position); nao parece necessario com OnCollisionExit
+        rb.AddForce(force, ForceMode.Impulse);
+
+        if (force.y > 0)
+        { isGrounded = false; }
+    }
+    private void Jump() => Launch(Vector3.up * jumpForce);
+
+    private void Mount(TurretBlock block)
+    {
+        block.Mount(transform);
+        mount = block;
+        rb.isKinematic = true;
+    }
+
+    private void Dismount()
+    {
+        mount.Dismount();
+        mount = null;
+        rb.isKinematic = false;
+
+        float dismountForce = jumpForce * 1.2f;
+        Launch(/*mountVelocity + */(Vector3.up * dismountForce));
     }
 
     IEnumerator InvincibilityOn(float time)
@@ -99,4 +155,15 @@ public class PlayerMovement : MonoBehaviour
         isInvincible = false;
     }
 
+    public void ApplyDamage()
+    {
+        if (!isInvincible)
+        {
+            StartCoroutine(InvincibilityOn(invincibilityTime));
+            GameManagement.instance.ReduceHealth();
+        }
+    }
+
+    public void EnableMovement() => isMovementEnabled = true;
+    public void DisableMovement() => isMovementEnabled = false;
 }
