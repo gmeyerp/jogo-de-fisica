@@ -62,4 +62,15 @@ public class Enemy : MonoBehaviour
     {
         PlayerMovement.instance.TakeDamage();
     }
+
+    public void Die()
+    {
+        EnemySpawner.instance.RemoveEnemyFromMap();
+        Destroy(gameObject);
+    }
+
+    public void TakeDamage(int damage)
+    {
+
+    }
 }
