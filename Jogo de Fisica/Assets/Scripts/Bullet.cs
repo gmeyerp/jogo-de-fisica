@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private new Rigidbody rigidbody;
+    [SerializeField] int bulletDamage = 1;
 
     [SerializeField] private float lifeSpan = 5f;
     private float lifeSpanLeft;
@@ -30,7 +31,7 @@ public class Bullet : MonoBehaviour
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.Die();
+                enemy.TakeDamage(bulletDamage);
             }
             Destroy(gameObject);
         }

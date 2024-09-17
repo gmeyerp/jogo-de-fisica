@@ -69,10 +69,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fdd65e05a481846818261345d4104c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  health: 5
+  maxHealth: 4
+  health: 4
   speed: 2.8
   rb: {fileID: 3764433093470450743}
+  coinValue: 1
 --- !u!54 &3764433093470450743
 Rigidbody:
   m_ObjectHideFlags: 0
