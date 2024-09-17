@@ -11,7 +11,6 @@ public class GameManagement : MonoBehaviour
     [SerializeField] int playerHealth;
     [SerializeField] int playerMaxHealth;
     [SerializeField] int money = 0;
-    GameCanvas gameCanvas;
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,7 +34,7 @@ public class GameManagement : MonoBehaviour
     public void ReduceHealth()
     {
         playerHealth--;
-        gameCanvas.UpdateHealth(playerHealth, false);
+        GameCanvas.instance.UpdateHealth(playerHealth, false);
         if (playerHealth <= 0)
         {
             GameOver();
@@ -56,12 +55,12 @@ public class GameManagement : MonoBehaviour
             Debug.Log(playerHealth);
             try
             {
-                gameCanvas.UpdateHealth(playerHealth, true);
+                GameCanvas.instance.UpdateHealth(playerHealth, true);
             }
             catch (Exception E)
             {
                 Debug.Log(E.Message);
-                gameCanvas.UpdateHealth(playerHealth - 1, true);
+                GameCanvas.instance.UpdateHealth(playerHealth - 1, true);
             }
         }         
     }
@@ -77,15 +76,10 @@ public class GameManagement : MonoBehaviour
         return playerHealth;
     }
 
-    public void BecomeGameCanvas(GameCanvas gameCanvas)
-    {
-        this.gameCanvas = gameCanvas;
-    }
-
     public void ChangeMoney (int amount)
     {
         money += amount;
-        gameCanvas.UpdateMoney();
+        GameCanvas.instance.UpdateMoney();
     }
 
     public int GetMoney()
