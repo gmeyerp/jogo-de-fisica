@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float speed;
     List<Transform> waypoints;
     [SerializeField] Rigidbody rb;
+    [SerializeField] int coinValue = 1;
     int currentWaypoint = 1;
     Vector3 direction;
 
@@ -66,11 +67,16 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         EnemySpawner.instance.RemoveEnemyFromMap();
+        GameManagement.instance.ChangeMoney(coinValue);
         Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
     {
-
+        health-= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 }

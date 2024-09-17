@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
+    [SerializeField] float maxTurretSpeed = 10f;
+    [SerializeField] float turretForce = 2f;
     Vector3 movement;
     bool isGrounded;
     bool isMovementEnabled;
@@ -66,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            mount.Move(movement * speed);
+            mount.Move(movement * turretForce, maxTurretSpeed);
         }
     }
 

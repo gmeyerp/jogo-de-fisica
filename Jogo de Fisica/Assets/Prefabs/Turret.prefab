@@ -305,4 +305,4 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 5513971649668057843}
   bulletPrefab: {fileID: 5130647535341696154, guid: 379bab5f290880042a726cf51ded159e, type: 3}
   weaponPower: 20
-  weaponCooldown: 5
+  weaponCooldown: 1

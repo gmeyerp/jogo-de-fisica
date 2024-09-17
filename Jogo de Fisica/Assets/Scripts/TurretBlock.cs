@@ -22,9 +22,12 @@ public class TurretBlock : MonoBehaviour
         }
     }
 
-    public void Move(Vector3 force)
+    public void Move(Vector3 force, float maxSpeed)
     {
-        rigidbody.AddForce(force, ForceMode.Force);
+        if (rigidbody.velocity.magnitude < maxSpeed)
+        {
+            rigidbody.AddForce(force, ForceMode.Force);
+        }
     }
 
     public void Mount(Transform rider)
