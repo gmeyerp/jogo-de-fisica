@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 7791937782696799300}
   mountPivot: {fileID: 3103442810525581196}
+  turret: {fileID: 7195857199621139928}
 --- !u!54 &7791937782696799300
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -274,3 +275,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4903040275427237590, guid: c42fc0da4497d8544b7e24796f3ba832, type: 3}
   m_PrefabInstance: {fileID: 6954864464807565979}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7195857199621139928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 241071904483276611, guid: c42fc0da4497d8544b7e24796f3ba832, type: 3}
+  m_PrefabInstance: {fileID: 6954864464807565979}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10359166ee0d77944a43a07b3ac47000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

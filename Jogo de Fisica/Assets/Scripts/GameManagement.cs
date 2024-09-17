@@ -67,8 +67,17 @@ public class GameManagement : MonoBehaviour
 
     public void Victory()
     {
-        SceneManager.LoadScene("VictoryScene");
-        Destroy(gameObject);
+        int cena = SceneManager.GetActiveScene().buildIndex;
+        if (cena == 1)
+        {
+            SceneManager.LoadScene(2);
+            Destroy(gameObject);
+        }
+        else
+        {
+            SceneManager.LoadScene("VictoryScene");
+            Destroy(gameObject);
+        }        
     }
 
     public int GetPlayerHealth()
