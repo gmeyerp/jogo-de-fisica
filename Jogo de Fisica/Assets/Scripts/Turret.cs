@@ -13,6 +13,9 @@ public class Turret : MonoBehaviour
     [SerializeField] private float weaponPower = 10f;
     [SerializeField] private float weaponCooldown = 2f;
     private float weaponCooldownLeft;
+    int shootCounter = 0;
+    [SerializeField] List<int> teste;
+    [SerializeField] List<ShootStyle> shootPattern;
 
     [Header("Upgrades")]
     public bool[] upgrades = new bool[4];
@@ -54,12 +57,12 @@ public class Turret : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        Bullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        if (upgrades[0])
-        { bullet.DamageIncrease(); }
-        if (upgrades[1])
-        { bullet.PenetrationOn(); }
-        bullet.Shoot(direction * weaponPower);
+        shootPattern[shootCounter].Shoot(direction, bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation, weaponPower);
+        shootCounter++;
+        if (shootCounter >= shootPattern.Count)
+        {
+            shootCounter = 0;
+        }
     }
 
     public void UpgradeDamageIncrease()

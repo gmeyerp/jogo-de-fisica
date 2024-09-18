@@ -265,6 +265,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4903040275427237590}
   - component: {fileID: 241071904483276611}
+  - component: {fileID: 2132540594946021189}
+  - component: {fileID: 2306870774478011814}
   m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
@@ -306,6 +308,12 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5130647535341696154, guid: 379bab5f290880042a726cf51ded159e, type: 3}
   weaponPower: 20
   weaponCooldown: 1
+  teste: 
+  shootPattern:
+  - {fileID: 2132540594946021189}
+  - {fileID: 2132540594946021189}
+  - {fileID: 2132540594946021189}
+  - {fileID: 2132540594946021189}
   upgrades: 00000000
   costs: 050000000a0000000a00000005000000
   damageIncrease: 0
@@ -318,3 +326,29 @@ MonoBehaviour:
   fireSpeed: 0
   fireSpeedReduction: 1.2
   fireSpeedIncreaseCost: 5
+--- !u!114 &2132540594946021189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5467637315768051190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abdd9f4634db18479062c54453138b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5130647535341696154, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+--- !u!114 &2306870774478011814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5467637315768051190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e225fd8b8604742acced9d3c7cfcff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4318257036888872559, guid: 16748b3e00ab1fc4e851f242eee8ecaf, type: 3}
