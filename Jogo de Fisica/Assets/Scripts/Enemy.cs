@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] Rigidbody rb;
+
+    [Header("General")]
     [SerializeField] int maxHealth = 5;
     [SerializeField] int health = 5;
-    [SerializeField] float speed;
-    List<Transform> waypoints;
-    [SerializeField] Rigidbody rb;
     [SerializeField] int coinValue = 1;
+    [SerializeField] float speed;
+
+    [Header("Track")]
+    [SerializeField] Track track;
     int currentWaypoint = 1;
     Vector3 direction;
+
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
-        waypoints = EnemySpawner.instance.GetWaypoints();
     }
 
     private void Update()
     {
-        direction = waypoints[currentWaypoint].position - transform.position;
+        direction = track.Waypoints[currentWaypoint].position - transform.position;
         if (direction.magnitude < 0.1f)
         {
             NextWaypoint();
@@ -41,12 +45,11 @@ public class Enemy : MonoBehaviour
 
     void NextWaypoint()
     {
-        if (currentWaypoint < waypoints.Count - 1)
+        if (currentWaypoint < track.Waypoints.Length - 1)
             currentWaypoint++;
         else
         {
             GameManagement.instance.ReduceHealth();
-            EnemySpawner.instance.RemoveEnemyFromMap();
             Destroy(gameObject);
         }
     }
@@ -66,7 +69,6 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        EnemySpawner.instance.RemoveEnemyFromMap();
         GameManagement.instance.ChangeMoney(coinValue);
         Destroy(gameObject);
     }
@@ -78,5 +80,12 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public Enemy Instantiate(Track track)
+    {
+        Enemy instance = Instantiate(this, track.StartWaypoint.position, track.StartWaypoint.rotation);
+        instance.track = track;
+        return instance;
     }
 }
