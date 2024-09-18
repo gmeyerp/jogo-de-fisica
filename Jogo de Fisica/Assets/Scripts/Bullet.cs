@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private new Rigidbody rigidbody;
     [SerializeField] int bulletDamage = 1;
+    [SerializeField] bool penetration;
 
     [SerializeField] private float lifeSpan = 5f;
     private float lifeSpanLeft;
@@ -33,7 +34,10 @@ public class Bullet : MonoBehaviour
             {
                 enemy.TakeDamage(bulletDamage);
             }
-            Destroy(gameObject);
+            if (!penetration)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -41,5 +45,15 @@ public class Bullet : MonoBehaviour
     {
         rigidbody.AddForce(force, ForceMode.VelocityChange);
         lifeSpan = lifeSpanLeft;
+    }
+
+    public void PenetrationOn()
+    {
+        penetration = true;
+    }
+
+    public void DamageIncrease()
+    {
+        bulletDamage++;
     }
 }

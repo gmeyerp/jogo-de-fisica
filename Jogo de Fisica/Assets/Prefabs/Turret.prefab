@@ -306,3 +306,15 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5130647535341696154, guid: 379bab5f290880042a726cf51ded159e, type: 3}
   weaponPower: 20
   weaponCooldown: 1
+  upgrades: 00000000
+  costs: 050000000a0000000a00000005000000
+  damageIncrease: 0
+  damageIncreaseCost: 5
+  penetrationShot: 0
+  penetrationShotCost: 10
+  rangeIncrease: 0
+  rangeIncreaseCost: 10
+  rangeIncreaseAmount: 1.2
+  fireSpeed: 0
+  fireSpeedReduction: 1.2
+  fireSpeedIncreaseCost: 5

@@ -8,6 +8,7 @@ public class TurretBlock : MonoBehaviour
     [SerializeField] private new Rigidbody rigidbody;
 
     [SerializeField] private Transform mountPivot;
+    public Turret turret;
     //private Transform riderOriginalParent;
     private Transform rider;
 

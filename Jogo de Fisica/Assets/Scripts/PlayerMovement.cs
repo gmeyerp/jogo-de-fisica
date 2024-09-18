@@ -141,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
         mount = block;
         
         rb.isKinematic = true;
+        ChangeBuyStatus(true);
         block.Mount(transform);
     }
 
@@ -148,12 +149,15 @@ public class PlayerMovement : MonoBehaviour
     {
         mount.Dismount();
         rb.isKinematic = false;
+        ChangeBuyStatus(false);
 
         float dismountForce = jumpForce * 1.2f;
         Launch(/*mount.Velocity + */(Vector3.up * dismountForce));
 
         mount = null;
     }
+
+    void ChangeBuyStatus(bool status) => GameCanvas.instance.UpgradeButtonStatus(status, mount.turret);
 
     IEnumerator InvincibilityOn(float time)
     {
