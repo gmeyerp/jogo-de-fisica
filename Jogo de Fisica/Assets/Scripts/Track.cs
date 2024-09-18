@@ -7,12 +7,12 @@ public class Track : MonoBehaviour
     [SerializeField] private Transform[] waypoints;
     private Dictionary<Transform, float> distances;
 
-    [SerializeField] private List<Enemy> enemies;
-    private Enemy first;
+    private List<Enemy> enemies;
 
     private void Awake()
     {
         distances = new Dictionary<Transform, float>();
+        enemies = new List<Enemy>();
     }
 
     private void Start()

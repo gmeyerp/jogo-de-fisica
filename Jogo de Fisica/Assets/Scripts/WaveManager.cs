@@ -14,8 +14,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float waveCooldown;
     private float waveCooldownLeft;
 
-    private int currentWaveIndex = -1;
-    private Wave CurrentWave => currentWaveIndex < waves.Length ? waves[currentWaveIndex < 0 ? 0 : currentWaveIndex] : null;
+    private int nextWaveIndex = 0;
+    private Wave NextWave => nextWaveIndex < waves.Length ? waves[nextWaveIndex] : null;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour
         {
             Wave wavePrefab = wavePrefabs[i];
             Wave waveInstance = wavePrefab.Instantiate(manager: this);
-            waveInstance.name = wavePrefab.name;
+            waveInstance.name = $"Wave {i + 1}";
             waves[i] = waveInstance;
         }
     }
@@ -36,11 +36,11 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        if (CurrentWave != null)
+        if (NextWave != null)
         {
             HandleWave();
         }
-        else
+        else if (EnemiesLeft == 0)
         {
             GameManagement.instance.Victory();
         }
@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour
 
     private void HandleWave()
     {
-        if (CurrentWave.IsSpawning) return;
+        if (NextWave.IsSpawning) return;
         if (EnemiesLeft > 0) return;
 
 
@@ -61,9 +61,9 @@ public class WaveManager : MonoBehaviour
         {
             waveCooldownLeft = 0;
 
-            currentWaveIndex++;
-            CurrentWave.Send();
-
+            NextWave.Send();
+            nextWaveIndex++;
+            
             waveCooldownLeft = waveCooldown;
         }
     }
