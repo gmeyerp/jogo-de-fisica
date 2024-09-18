@@ -5,29 +5,35 @@ using UnityEngine;
 public class Track : MonoBehaviour
 {
     [SerializeField] private Transform[] waypoints;
+    private Dictionary<Transform, float> distances;
 
     [SerializeField] private List<Enemy> enemies;
-    private float totalDistance;
+    private Enemy first;
+
+    private void Awake()
+    {
+        distances = new Dictionary<Transform, float>();
+    }
 
     private void Start()
     {
-        totalDistance = CalculateTotalDistance();
+        CalculateDistances();
     }
 
-    private float CalculateTotalDistance()
+    private void CalculateDistances()
     {
         float totalDistance = 0;
-        
         foreach (Transform waypoint in waypoints)
-        { totalDistance += waypoint.position.magnitude; }
-
-        return totalDistance;
+        {
+            distances[waypoint] = totalDistance;
+            totalDistance += waypoint.position.magnitude;
+        }
     }
 
-    public void Send(Enemy enemy)
+    public void Send(Enemy enemyPrefab)
     {
-        Enemy instance = enemy.Instantiate(track: this);
-        enemies.Add(instance);
+        Enemy enemyInstance = enemyPrefab.Instantiate(track: this);
+        enemies.Add(enemyInstance);
     }
 
     public void Remove(Enemy enemy)
@@ -35,8 +41,14 @@ public class Track : MonoBehaviour
         enemies.Remove(enemy);
     }
 
+    public float DistanceOf(Transform waypoint) => distances[waypoint];
+
     public Transform[] Waypoints => waypoints;
 
     public Transform StartWaypoint => Waypoints[0];
     public Transform EndWaypoint => Waypoints[waypoints.Length - 1];
+
+    public float TotalDistance => distances[EndWaypoint];
+
+    public int EnemiesLeft => enemies.Count;
 }

@@ -14,7 +14,9 @@ public class Enemy : MonoBehaviour
 
     [Header("Track")]
     [SerializeField] Track track;
-    int currentWaypoint = 1;
+    int nextWaypointIndex = 1;
+    float distanceTravelled = 0;
+
     Vector3 direction;
 
 
@@ -26,7 +28,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        direction = track.Waypoints[currentWaypoint].position - transform.position;
+        direction = track.Waypoints[nextWaypointIndex].position - transform.position;
         if (direction.magnitude < 0.1f)
         {
             NextWaypoint();
@@ -39,14 +41,18 @@ public class Enemy : MonoBehaviour
 
     void Move()
     {
-        
         rb.MovePosition(transform.position + direction.normalized * speed * Time.fixedDeltaTime);
+        
+        Transform lastWaypoint = track.Waypoints[nextWaypointIndex - 1];
+        Transform nextWaypoint = track.Waypoints[nextWaypointIndex];
+        float distanceToNextWaypoint = (transform.position - nextWaypoint.position).magnitude;
+        distanceTravelled = track.DistanceOf(lastWaypoint) + distanceToNextWaypoint;
     }
 
     void NextWaypoint()
     {
-        if (currentWaypoint < track.Waypoints.Length - 1)
-            currentWaypoint++;
+        if (nextWaypointIndex < track.Waypoints.Length - 1)
+            nextWaypointIndex++;
         else
         {
             GameManagement.instance.ReduceHealth();
@@ -60,6 +66,11 @@ public class Enemy : MonoBehaviour
         {
             DealDamage();
         }
+    }
+
+    private void OnDestroy()
+    {
+        track.Remove(enemy: this);
     }
 
     void DealDamage()
@@ -88,4 +99,6 @@ public class Enemy : MonoBehaviour
         instance.track = track;
         return instance;
     }
+
+    public float TrackPercentageCovered => distanceTravelled / track.TotalDistance;
 }
