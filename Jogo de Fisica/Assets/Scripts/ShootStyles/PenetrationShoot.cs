@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PenetrationShoot : ShootStyle
-{
-    
-    public override void Shoot(Vector3 direction, Bullet bulletPrefab, Vector3 position, Quaternion rotation, float weaponPower)
+{  
+    public override void Shoot(Vector3 direction, Vector3 spawnPosition, Quaternion spawnRotation, float weaponPower)
     {
-        Bullet bullet = Instantiate(prefab, position, rotation);
+        Bullet bullet = Instantiate(prefab, spawnPosition, spawnRotation);
         bullet.PenetrationOn();
         Debug.Log("Penetration");
         bullet.Shoot(direction * weaponPower);

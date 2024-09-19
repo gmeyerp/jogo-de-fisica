@@ -57,7 +57,7 @@ public class Turret : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        shootPattern[shootCounter].Shoot(direction, bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation, weaponPower);
+        shootPattern[shootCounter].Shoot(direction, bulletSpawnPoint.position, bulletSpawnPoint.rotation, weaponPower);
         shootCounter++;
         if (shootCounter >= shootPattern.Count)
         {
