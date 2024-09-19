@@ -43,10 +43,9 @@ public class Enemy : MonoBehaviour
     {
         rb.MovePosition(transform.position + direction.normalized * speed * Time.fixedDeltaTime);
         
-        Transform lastWaypoint = track.Waypoints[nextWaypointIndex - 1];
         Transform nextWaypoint = track.Waypoints[nextWaypointIndex];
-        float distanceToNextWaypoint = (transform.position - nextWaypoint.position).magnitude;
-        distanceTravelled = track.DistanceOf(lastWaypoint) + distanceToNextWaypoint;
+        float distanceToNextWaypoint = Vector3.Distance(transform.position, nextWaypoint.position);
+        distanceTravelled = track.DistanceOf(nextWaypoint) - distanceToNextWaypoint;
     }
 
     void NextWaypoint()
