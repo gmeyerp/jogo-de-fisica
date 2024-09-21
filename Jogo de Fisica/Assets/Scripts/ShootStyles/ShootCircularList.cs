@@ -8,6 +8,7 @@ public class ShootCircularList
 {
     public Item first;
     public Item last;
+    public Item currentShooter;
     public int size { get; private set; }
 
     public ShootCircularList()
@@ -25,6 +26,7 @@ public class ShootCircularList
             first = aux;
             last = aux;
             last.next = aux;
+            currentShooter = first;
         }
         else
         {
@@ -45,6 +47,7 @@ public class ShootCircularList
             aux.next = first;
             last.next = aux;
             first = aux;
+            currentShooter = first;
         }
         else if (index == size)
         {
@@ -78,6 +81,10 @@ public class ShootCircularList
             }
             else //caso tenham outros elementos
             {
+                if (currentShooter == first) //medida de proteção do current shooter
+                {
+                    currentShooter = first.next;
+                }
                 first = first.next;
                 last.next = first;
             }            
@@ -90,6 +97,10 @@ public class ShootCircularList
         {
             if (Equals(aux.style, style))
             {
+                if (currentShooter == aux) //medida de proteção do current shooter
+                {
+                    currentShooter = aux.next;
+                }
                 ant.next = aux.next;
                 if (ant.next == first) //se for o novo ultimo elemento
                 {
@@ -117,6 +128,10 @@ public class ShootCircularList
             }
             else //caso tenham outros elementos
             {
+                if (currentShooter == first) //medida de proteção do current shooter
+                {
+                    currentShooter = first.next;
+                }
                 first = first.next;
                 last.next = first;
             }
@@ -129,6 +144,11 @@ public class ShootCircularList
             Item aux = first.next;
             Item ant = first;
             for (; i < index; i++, aux = aux.next, ant = ant.next) { };
+
+            if (currentShooter == aux) //medida de proteção do current shooter
+            {
+                currentShooter = aux.next;
+            }
 
             ant.next = aux.next;
             if (ant.next == first)
@@ -144,6 +164,14 @@ public class ShootCircularList
     {
         RemoveAt(index);
         AddAt(style, index);
+    }
+
+    public void Shoot(Vector3 direction, Vector3 spawnPosition, Quaternion spawnRotation, float weaponPower)
+    {
+        if (currentShooter == null)
+            throw new Exception("Null shooter");
+        currentShooter.style.Shoot(direction, spawnPosition, spawnRotation, weaponPower);
+        currentShooter = currentShooter.next;
     }
 }
 
