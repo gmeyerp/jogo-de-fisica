@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class Turret : MonoBehaviour
     int shootCounter = 0;
     [SerializeField] List<int> teste;
     [SerializeField] List<ShootStyle> shootPattern;
+    [SerializeField] ShootCircularList shootList;
+    [SerializeField] Item currentShoot;
 
     [Header("Upgrades")]
     public bool[] upgrades = new bool[4];
@@ -30,6 +33,23 @@ public class Turret : MonoBehaviour
     public bool fireSpeed;
     [SerializeField] float fireSpeedReduction = 1.2f;
     [SerializeField] int fireSpeedIncreaseCost = 5;
+
+    public void Start()
+    {
+        //deve ser possivel resolver isso usando Scriptable Object para armazenar o setup inicial das turrets e evitar essa lista nativa
+        foreach (ShootStyle shootStyle in shootPattern) //fiz essa solucao feia pra ficar mais facil montar o estado inicial das turrets pelo editor
+        {
+            try
+            {
+                shootList.Add(shootStyle);
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+            }
+        }
+        currentShoot = shootList.first;
+    }
 
 
     private void Update()
@@ -57,12 +77,14 @@ public class Turret : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        shootPattern[shootCounter].Shoot(direction, bulletSpawnPoint.position, bulletSpawnPoint.rotation, weaponPower);
-        shootCounter++;
-        if (shootCounter >= shootPattern.Count)
-        {
-            shootCounter = 0;
-        }
+        //shootPattern[shootCounter].Shoot(direction, bulletSpawnPoint.position, bulletSpawnPoint.rotation, weaponPower);
+        //shootCounter++;
+        currentShoot.style.Shoot(direction, bulletSpawnPoint.position, bulletSpawnPoint.rotation, weaponPower);
+        currentShoot = currentShoot.next;
+        //if (shootCounter >= shootPattern.Count)
+        //{
+        //    shootCounter = 0;
+        //}
     }
 
     public void UpgradeDamageIncrease()

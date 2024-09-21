@@ -843,22 +843,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretBlock
       objectReference: {fileID: 0}
-    - target: {fileID: 7195857199621139928, guid: 5b20343ca0284254093c59b54bd518b6, type: 3}
-      propertyPath: shootPattern.Array.data[0]
-      value: 
-      objectReference: {fileID: 533616927}
-    - target: {fileID: 7195857199621139928, guid: 5b20343ca0284254093c59b54bd518b6, type: 3}
-      propertyPath: shootPattern.Array.data[1]
-      value: 
-      objectReference: {fileID: 533616927}
-    - target: {fileID: 7195857199621139928, guid: 5b20343ca0284254093c59b54bd518b6, type: 3}
-      propertyPath: shootPattern.Array.data[2]
-      value: 
-      objectReference: {fileID: 533616927}
-    - target: {fileID: 7195857199621139928, guid: 5b20343ca0284254093c59b54bd518b6, type: 3}
-      propertyPath: shootPattern.Array.data[3]
-      value: 
-      objectReference: {fileID: 533616927}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1003,17 +987,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 745265323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &533616927 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4692031371385017002, guid: 5b20343ca0284254093c59b54bd518b6, type: 3}
-  m_PrefabInstance: {fileID: 490777408}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c01688822500e9f4ab1e9ac825b03509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &563100444
 PrefabInstance:
   m_ObjectHideFlags: 0
