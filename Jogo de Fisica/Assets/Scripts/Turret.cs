@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,11 @@ public class Turret : MonoBehaviour
     [SerializeField] private float weaponPower = 10f;
     [SerializeField] private float weaponCooldown = 2f;
     private float weaponCooldownLeft;
+    int shootCounter = 0;
+    [SerializeField] List<int> teste;
+    [SerializeField] List<ShootStyle> shootPattern;
+    [SerializeField] ShootCircularList shootList;
+    [SerializeField] Item currentShoot;
 
     [Header("Upgrades")]
     public bool[] upgrades = new bool[4];
@@ -27,6 +33,23 @@ public class Turret : MonoBehaviour
     public bool fireSpeed;
     [SerializeField] float fireSpeedReduction = 1.2f;
     [SerializeField] int fireSpeedIncreaseCost = 5;
+
+    public void Start()
+    {
+        //deve ser possivel resolver isso usando Scriptable Object para armazenar o setup inicial das turrets e evitar essa lista nativa
+        foreach (ShootStyle shootStyle in shootPattern) //fiz essa solucao feia pra ficar mais facil montar o estado inicial das turrets pelo editor
+        {
+            try
+            {
+                shootList.Add(shootStyle);
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+            }
+        }
+        currentShoot = shootList.first;
+    }
 
 
     private void Update()
@@ -54,12 +77,13 @@ public class Turret : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        Bullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        if (upgrades[0])
-        { bullet.DamageIncrease(); }
-        if (upgrades[1])
-        { bullet.PenetrationOn(); }
-        bullet.Shoot(direction * weaponPower);
+        //shootPattern[shootCounter].Shoot(direction, bulletSpawnPoint.position, bulletSpawnPoint.rotation, weaponPower);
+        //shootCounter++;
+        shootList.Shoot(direction, bulletSpawnPoint.position, bulletSpawnPoint.rotation, weaponPower);
+        //if (shootCounter >= shootPattern.Count)
+        //{
+        //    shootCounter = 0;
+        //}
     }
 
     public void UpgradeDamageIncrease()

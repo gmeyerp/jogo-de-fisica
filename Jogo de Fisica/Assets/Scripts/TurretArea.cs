@@ -22,5 +22,32 @@ public class TurretArea : MonoBehaviour
     }
 
     public int TargetCount => targets.Count;
-    public TurretTarget First => targets.Count > 0 ? targets[0] : null;
+    public TurretTarget First
+    {
+        get
+        {
+            if (targets.Count == 0) return null;
+
+            TurretTarget first = targets[0];
+            Enemy firstIfEnemy = null;
+            foreach (TurretTarget target in targets)
+            {
+                if (target.gameObject.TryGetComponent(out Enemy targetAsEnemy))
+                {
+                    if (false
+                        // Priorizando inimigos
+                        || (firstIfEnemy == null)
+                        // Priorizando os inimigos mais próximos do fim
+                        || (firstIfEnemy.TrackPercentageCovered < targetAsEnemy.TrackPercentageCovered) 
+                    )
+                    {
+                        first = target;
+                        firstIfEnemy = targetAsEnemy;
+                    }
+                }
+            }
+
+            return first;
+        }
+    }
 }
