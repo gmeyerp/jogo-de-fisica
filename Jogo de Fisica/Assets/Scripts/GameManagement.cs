@@ -15,9 +15,9 @@ public class GameManagement : MonoBehaviour
     void Awake()
     {
         if (instance == null)
-            instance = this;
+        { instance = this; }
         else
-            Destroy(this.gameObject);
+        { Destroy(this.gameObject); }
         DontDestroyOnLoad(this.gameObject);
     }
     
@@ -94,5 +94,10 @@ public class GameManagement : MonoBehaviour
     public int GetMoney()
     {
         return money;
+    }
+
+    public void PauseGame()
+    {
+
     }
 }

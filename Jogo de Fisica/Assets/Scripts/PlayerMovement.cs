@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float invincibilityTime = 1f;
     bool isInvincible;
 
+
     #region Actions
     public InputActionAsset inputActions;
     InputActionMap playerActions;
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
         moveAction = playerActions.FindAction("Move");
         playerActions.FindAction("Jump").performed += OnJump;
+        playerActions.FindAction("Pause").performed += OnPause;
 
         EnableMovement();
     }
@@ -86,6 +88,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Dismount();
         }
+    }
+
+    private void OnPause(InputAction.CallbackContext context)
+    {
+        GameManagement.instance.PauseGame();
     }
 
     void OnEnable()
