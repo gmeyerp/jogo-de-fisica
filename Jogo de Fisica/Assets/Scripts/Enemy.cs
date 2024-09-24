@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     int nextWaypointIndex = 1;
     float distanceTravelled = 0;
 
+    [Header("FX")]
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] GameObject turretDamageVFX;
+
     Vector3 direction;
 
 
@@ -55,6 +59,7 @@ public class Enemy : MonoBehaviour
         else
         {
             GameManagement.instance.ReduceHealth();
+            Instantiate(turretDamageVFX, transform.position, turretDamageVFX.transform.rotation);
             Destroy(gameObject);
         }
     }
@@ -80,6 +85,7 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         GameManagement.instance.ChangeMoney(coinValue);
+        Instantiate(deathVFX, transform.position, deathVFX.transform.rotation);
         Destroy(gameObject);
     }
 

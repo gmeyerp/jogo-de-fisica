@@ -117,6 +117,7 @@ public class GameManagement : MonoBehaviour
 
     public void PauseGame()
     {
+        Debug.Log("Pause");
         if (isPaused)
         {
             Time.timeScale = 1f;
