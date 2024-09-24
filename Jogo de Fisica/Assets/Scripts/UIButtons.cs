@@ -17,8 +17,17 @@ public class UIButtons : MonoBehaviour
 
     public void ReturnMenu()
     {
-        SceneManager.LoadScene(0);
+        GameManagement.instance.ReturnToMenu();   
     }
 
+    public void ReloadLevel()
+    {
+        GameManagement.instance.ReloadLevel();
+    }
+
+    public void PauseButton()
+    {
+        GameManagement.instance.PauseGame();
+    }
 
 }

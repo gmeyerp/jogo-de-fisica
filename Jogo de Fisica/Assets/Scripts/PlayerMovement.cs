@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     InputActionMap playerActions;
     InputAction moveAction;
     InputAction jumpAction;
+    InputAction pauseAction;
     #endregion
 
     void Awake()
