@@ -30,4 +30,9 @@ public class UIButtons : MonoBehaviour
         GameManagement.instance.PauseGame();
     }
 
+    public void RetryLevel()
+    {
+        GameManagement.instance.Retry();
+    }
+
 }

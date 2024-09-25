@@ -7,6 +7,7 @@ public class WaveManager : MonoBehaviour
 {
     [Header("Track Configurations")]
     [SerializeField] private Track[] tracks;
+    [SerializeField] int trackCount;
 
     [Header("Wave Configurations")]
     [SerializeField] private Wave[] wavePrefabs;
@@ -68,12 +69,14 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    private Track GetNextTrack() => tracks[0];
+    private Track GetNextTrack(int trackCount) => tracks[trackCount];
 
     public void Send(Enemy enemyPrefab)
     {
-        Track track = GetNextTrack();
+        Track track = GetNextTrack(trackCount);
         track.Send(enemyPrefab);
+        trackCount++;
+        trackCount = trackCount % tracks.Length;
     }
 
     public int EnemiesLeft => tracks.Sum(track => track.EnemiesLeft);

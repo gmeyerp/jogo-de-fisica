@@ -171,6 +171,11 @@ public class PlayerMovement : MonoBehaviour
         mount = null;
     }
 
+    public void UpWind(float windForce)
+    {
+        rb.AddForce(transform.up * windForce * Time.fixedDeltaTime, ForceMode.VelocityChange);
+    }
+
     void ChangeBuyStatus(bool status) => GameCanvas.instance.UpgradeButtonStatus(status, mount.turret);
 
     IEnumerator InvincibilityOn(float time)

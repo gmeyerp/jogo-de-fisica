@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        transform.LookAt(track.Waypoints[nextWaypointIndex].transform);
     }
 
     private void Update()
@@ -55,7 +56,10 @@ public class Enemy : MonoBehaviour
     void NextWaypoint()
     {
         if (nextWaypointIndex < track.Waypoints.Length - 1)
+        {
             nextWaypointIndex++;
+            transform.LookAt(track.Waypoints[nextWaypointIndex].transform);
+        }
         else
         {
             GameManagement.instance.ReduceHealth();

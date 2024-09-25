@@ -11,6 +11,7 @@ public class GameManagement : MonoBehaviour
     [SerializeField] int playerHealth;
     [SerializeField] int playerMaxHealth;
     [SerializeField] int money = 0;
+    int lastScene = 0;
     public Action OnMoneyChanged;
     bool isPaused;
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class GameManagement : MonoBehaviour
         { instance = this; }
         else
         { Destroy(this.gameObject); }
-        //DontDestroyOnLoad(this.gameObject); //removi isso porque nao acho que esta acrescentando muito o GameManager transferir entre cenas no momento
+        DontDestroyOnLoad(this.gameObject); //retornei isso porque permite o retry do game over recome�ar o level que estaa
     }
 
     private void Start()
@@ -51,13 +52,19 @@ public class GameManagement : MonoBehaviour
 
     public void GameOver()
     {
+        lastScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene("GameOverScene");
-        Destroy(gameObject);
     }
 
     public void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
+        Destroy(gameObject);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(lastScene);
         Destroy(gameObject);
     }
 
@@ -91,12 +98,10 @@ public class GameManagement : MonoBehaviour
         if (cena == 1)
         {
             SceneManager.LoadScene(2);
-            Destroy(gameObject);
         }
         else
         {
             SceneManager.LoadScene("VictoryScene");
-            Destroy(gameObject);
         }        
     }
 
@@ -132,5 +137,10 @@ public class GameManagement : MonoBehaviour
             UIManager.instance.pauseCanvas.SetActive(true);
             isPaused = true;
         }        
+    }
+
+    public int GetLastScene()
+    { 
+        return lastScene;
     }
 }
