@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.Events;
 
 public class GameCanvas : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class GameCanvas : MonoBehaviour
     void Start()
     {
         UpdateMoney();
+
+        GameManagement.instance.OnMoneyChanged += UpdateMoney;
     }
 
     public void UpdateHealth(int value, bool increase)
@@ -70,8 +73,8 @@ public class GameCanvas : MonoBehaviour
         }
         else
         {
-            upgradeCanvas.gameObject.SetActive(true);
             UpgradeCanvas.instance.RefreshButtons(upgradeTarget);
+            upgradeCanvas.gameObject.SetActive(true);
         }              
     }
 }

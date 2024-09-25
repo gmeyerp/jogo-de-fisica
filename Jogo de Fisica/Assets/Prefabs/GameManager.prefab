@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 5
   playerMaxHealth: 5
-  money: 5
+  money: 3

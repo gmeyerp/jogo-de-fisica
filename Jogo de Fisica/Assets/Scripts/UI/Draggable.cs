@@ -11,15 +11,17 @@ public abstract class Draggable<T> : MonoBehaviour, IBeginDragHandler, IDragHand
 
     private RectTransform layoutParent;
     private Vector3 defaultPosition;
-    private Dictionary<Image, bool> imagesDefaultRaycast;
+    private Dictionary<Graphic, bool> graphicDefaultRaycasts;
 
-    private void Awake()
+    [SerializeField] private bool isDraggable = true;
+
+    protected void Start()
     {
-        Image[] imagesInChildren = GetComponentsInChildren<Image>();
+        Graphic[] graphics = GetComponentsInChildren<Graphic>();
 
-        imagesDefaultRaycast = new();
-        foreach (Image image in imagesInChildren)
-        { imagesDefaultRaycast.Add(image, image.raycastTarget); }
+        graphicDefaultRaycasts = new();
+        foreach (Graphic graphic in graphics)
+        { graphicDefaultRaycasts.Add(graphic, graphic.raycastTarget); }
 
         if (GetComponentInParent<LayoutGroup>() != null)
         {
@@ -35,7 +37,7 @@ public abstract class Draggable<T> : MonoBehaviour, IBeginDragHandler, IDragHand
 
     private void DisableRaycast()
     {
-        foreach (Image image in imagesDefaultRaycast.Keys)
+        foreach (Graphic image in graphicDefaultRaycasts.Keys)
         {
             image.raycastTarget = false;
         }
@@ -43,13 +45,18 @@ public abstract class Draggable<T> : MonoBehaviour, IBeginDragHandler, IDragHand
 
     private void ResetRaycast()
     {
-        foreach (Image image in imagesDefaultRaycast.Keys)
+        foreach (Graphic image in graphicDefaultRaycasts.Keys)
         {
-            image.raycastTarget = imagesDefaultRaycast[image];
+            image.raycastTarget = graphicDefaultRaycasts[image];
         }
     }
 
-    private UnityAction ResetPosition;
+    protected void SetDraggable(bool draggable)
+    {
+        isDraggable = draggable;
+    }
+
+    protected UnityAction ResetPosition;
     private void ResetPositionIfInLayoutGroup()
     { LayoutRebuilder.MarkLayoutForRebuild(layoutParent); }
     private void ResetPositionIfNotInLayoutGroup()
@@ -57,11 +64,15 @@ public abstract class Draggable<T> : MonoBehaviour, IBeginDragHandler, IDragHand
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
+        if (!isDraggable) return;
+        
         DisableRaycast();
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
+        if (!isDraggable) return;
+
         transform.position = eventData.position;
     }
 
@@ -77,4 +88,5 @@ public abstract class Draggable<T> : MonoBehaviour, IBeginDragHandler, IDragHand
     }
 
     public T Value => value;
+    public bool CanBeDropped => isDraggable;
 }

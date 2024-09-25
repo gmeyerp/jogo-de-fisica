@@ -11,6 +11,7 @@ public class GameManagement : MonoBehaviour
     [SerializeField] int playerHealth;
     [SerializeField] int playerMaxHealth;
     [SerializeField] int money = 0;
+    public Action OnMoneyChanged;
     bool isPaused;
     // Start is called before the first frame update
     void Awake()
@@ -107,7 +108,8 @@ public class GameManagement : MonoBehaviour
     public void ChangeMoney (int amount)
     {
         money += amount;
-        GameCanvas.instance.UpdateMoney();
+
+        OnMoneyChanged();
     }
 
     public int GetMoney()
