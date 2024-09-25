@@ -8,6 +8,8 @@ public class ShootCircularList
 {
     public Item first;
     public Item last;
+    public Item second;
+    public Item third;
     public Item currentShooter;
     public int size { get; private set; }
 
@@ -58,10 +60,10 @@ public class ShootCircularList
         else
         {
             int i = 1;
-            Item current = first.next;
-            for (; i < index; i++, current = current.next) { };
+            Item current = first;
+            for (; i < index - 1; i++, current = current.next) { };
             aux.next = current.next;
-            current.next = aux;            
+            current.next = aux;
         }
         size++;
     }
