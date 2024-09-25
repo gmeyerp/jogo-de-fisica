@@ -12,6 +12,7 @@ public class GameManagement : MonoBehaviour
     [SerializeField] int playerMaxHealth;
     [SerializeField] int money = 0;
     int lastScene = 0;
+    public Action OnMoneyChanged;
     bool isPaused;
     // Start is called before the first frame update
     void Awake()
@@ -20,7 +21,7 @@ public class GameManagement : MonoBehaviour
         { instance = this; }
         else
         { Destroy(this.gameObject); }
-        DontDestroyOnLoad(this.gameObject); //retornei isso porque permite o retry do game over recomeçar o level que estaa
+        DontDestroyOnLoad(this.gameObject); //retornei isso porque permite o retry do game over recomeï¿½ar o level que estaa
     }
 
     private void Start()
@@ -112,7 +113,8 @@ public class GameManagement : MonoBehaviour
     public void ChangeMoney (int amount)
     {
         money += amount;
-        GameCanvas.instance.UpdateMoney();
+
+        OnMoneyChanged();
     }
 
     public int GetMoney()

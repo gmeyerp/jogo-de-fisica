@@ -9,7 +9,10 @@ public abstract class DropTarget<T> : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag.TryGetComponent(out Draggable<T> draggable))
         {
-            OnDrop(draggable.Value);
+            if (draggable.CanBeDropped)
+            {
+                OnDrop(draggable.Value);
+            }
         }
     }
 

@@ -86,8 +86,19 @@ public class UpgradeCanvas : MonoBehaviour
         RefreshButtons(targetTurret);
     }
 
-    public void SetShootStyle(int index, ShootStyle style)
+    public ShootStyle GetShootStyle(int index)
     {
-        targetTurret.SetShootStyle(index, style);
+        return targetTurret?.GetShootStyle(index);
+    }
+    public bool TryBuyShootStyle(int index, ShootStyle style)
+    {
+        bool noChanges = !targetTurret.SetShootStyle(index, style);
+        if (noChanges) return false;
+
+        bool tooExpensive = GameManagement.instance.GetMoney() < style.Price;
+        if (tooExpensive) return false;
+
+        GameManagement.instance.ChangeMoney(-style.Price);
+        return true;
     }
 }

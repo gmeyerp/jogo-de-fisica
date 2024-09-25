@@ -14,9 +14,30 @@ public class ShootStyleSlot : DropTarget<ShootStyle>
         image = GetComponent<Image>();
     }
 
+    private void OnEnable()
+    {
+        UpdateShootStyle();
+    }
+
     protected override void OnDrop(ShootStyle style)
     {
-        upgradeCanvas.SetShootStyle(styleIndex, style);
-        image.sprite = style.Sprite;
+        SetShootStyle(style);
+    }
+
+    public void UpdateShootStyle()
+    {
+        ShootStyle style = upgradeCanvas.GetShootStyle(styleIndex);
+        if (style != null)
+        {
+            image.sprite = style.Sprite;
+        }
+    }
+
+    public void SetShootStyle(ShootStyle style)
+    {
+        if (upgradeCanvas.TryBuyShootStyle(styleIndex, style))
+        {
+            UpdateShootStyle();
+        }
     }
 }
