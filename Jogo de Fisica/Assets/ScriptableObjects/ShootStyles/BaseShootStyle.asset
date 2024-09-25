@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BaseShootStyle
   m_EditorClassIdentifier: 
   prefab: {fileID: 5130647535341696154, guid: 379bab5f290880042a726cf51ded159e, type: 3}
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: cb38022ebd8a77043925d078c383dd7a, type: 3}
