@@ -34,6 +34,11 @@ public class GameCanvas : MonoBehaviour
         GameManagement.instance.OnMoneyChanged += UpdateMoney;
     }
 
+    private void OnDestroy()
+    {
+        GameManagement.instance.OnMoneyChanged -= UpdateMoney;
+    }
+
     public void UpdateHealth(int value, bool increase)
     {
         if (value >= heartSprites.Length)
