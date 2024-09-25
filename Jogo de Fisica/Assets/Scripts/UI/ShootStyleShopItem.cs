@@ -20,6 +20,11 @@ public class ShootStyleShopItem : Draggable<ShootStyle>
         UpdateAvailability();
     }
 
+    private void OnDestroy()
+    {
+        GameManagement.instance.OnMoneyChanged -= UpdateAvailability;
+    }
+
     private void UpdateAvailability()
     {
         if (Value.Price <= GameManagement.instance.GetMoney())
