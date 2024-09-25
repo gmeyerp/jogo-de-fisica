@@ -24,12 +24,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float invincibilityTime = 1f;
     bool isInvincible;
 
+    [Header("FX")]
+    [SerializeField] ParticleSystem jumpVFX;
+
 
     #region Actions
     public InputActionAsset inputActions;
     InputActionMap playerActions;
     InputAction moveAction;
     InputAction jumpAction;
+    InputAction pauseAction;
     #endregion
 
     void Awake()
@@ -88,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Dismount();
         }
+        jumpVFX.Play();
     }
 
     private void OnPause(InputAction.CallbackContext context)
@@ -97,11 +102,13 @@ public class PlayerMovement : MonoBehaviour
 
     void OnEnable()
     {
-        inputActions.FindActionMap("Player").Enable();
+        playerActions.Enable();
     }
     void OnDisable()
     {
-        inputActions.FindActionMap("Player").Disable();
+        playerActions.FindAction("Jump").performed -= OnJump;
+        playerActions.FindAction("Pause").performed -= OnPause;
+        playerActions.Disable();
     }
 
     private void OnCollisionEnter(Collision collision)

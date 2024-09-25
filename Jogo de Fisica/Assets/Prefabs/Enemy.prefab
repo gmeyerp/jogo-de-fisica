@@ -69,11 +69,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fdd65e05a481846818261345d4104c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 3764433093470450743}
   maxHealth: 4
   health: 4
-  speed: 2.8
-  rb: {fileID: 3764433093470450743}
   coinValue: 1
+  speed: 2.8
+  track: {fileID: 0}
+  deathVFX: {fileID: 1903233073272734474, guid: 4838cc04184aa1d4d9bb0592a686265b, type: 3}
+  turretDamageVFX: {fileID: 3598460049281718044, guid: 181438b722be7f54aaaa361f91ff8506, type: 3}
 --- !u!54 &3764433093470450743
 Rigidbody:
   m_ObjectHideFlags: 0

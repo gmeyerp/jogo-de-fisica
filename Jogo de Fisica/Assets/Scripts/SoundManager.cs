@@ -40,4 +40,14 @@ public class SoundManager : MonoBehaviour
     {
         sfx.volume = volume;
     }
+
+    public float GetBGMVolume()
+    {
+        return bgm.volume;
+    }
+
+    public float GetSFXVolume()
+    {
+        return sfx.volume;
+    }
 }
