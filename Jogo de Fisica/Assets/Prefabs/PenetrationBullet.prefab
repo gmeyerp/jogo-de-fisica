@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9164f3329e3158f4d870473bfe6fa84c, type: 2}
+    - target: {fileID: 4503912852219433932, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503912852219433932, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.9843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503912852219433932, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -54,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7208181378746312352, guid: 379bab5f290880042a726cf51ded159e, type: 3}
       propertyPath: m_Name
-      value: Bullet Variant
+      value: PenetrationBullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

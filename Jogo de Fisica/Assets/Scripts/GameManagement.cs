@@ -11,6 +11,7 @@ public class GameManagement : MonoBehaviour
     [SerializeField] int playerHealth;
     [SerializeField] int playerMaxHealth;
     [SerializeField] int money = 0;
+    bool isPaused;
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,9 +19,15 @@ public class GameManagement : MonoBehaviour
         { instance = this; }
         else
         { Destroy(this.gameObject); }
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject); //removi isso porque nao acho que esta acrescentando muito o GameManager transferir entre cenas no momento
     }
-    
+
+    private void Start()
+    {
+        isPaused = false;
+        Time.timeScale = 1.0f;
+    }
+
     public void SetSafePosition(Vector3 position)
     {
         lastSafePosition = position;
@@ -44,6 +51,18 @@ public class GameManagement : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene("GameOverScene");
+        Destroy(gameObject);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Destroy(gameObject);
     }
 
@@ -98,6 +117,18 @@ public class GameManagement : MonoBehaviour
 
     public void PauseGame()
     {
-
+        Debug.Log("Pause");
+        if (isPaused)
+        {
+            Time.timeScale = 1f;
+            UIManager.instance.pauseCanvas.SetActive(false);
+            isPaused = false;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            UIManager.instance.pauseCanvas.SetActive(true);
+            isPaused = true;
+        }        
     }
 }
