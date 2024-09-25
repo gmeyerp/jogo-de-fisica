@@ -86,4 +86,8 @@ public class UpgradeCanvas : MonoBehaviour
         RefreshButtons(targetTurret);
     }
 
+    public void SetShootStyle(int index, ShootStyle style)
+    {
+        targetTurret.SetShootStyle(index, style);
+    }
 }

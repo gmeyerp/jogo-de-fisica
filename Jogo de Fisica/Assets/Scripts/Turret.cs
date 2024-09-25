@@ -107,4 +107,9 @@ public class Turret : MonoBehaviour
         upgrades[3] = true;
         weaponCooldown /= fireSpeedReduction;
     }
+
+    public void SetShootStyle(int index, ShootStyle style)
+    {
+        shootList.ReplaceAt(style, index);
+    }
 }

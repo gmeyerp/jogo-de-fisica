@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "SpreadShootStyle", menuName = "Scriptable Objects/Shoot Styles/Spread", order = 2)]
 public class SpreadShot : ShootStyle
 {
     [SerializeField] float angle = 30f;
