@@ -14,11 +14,11 @@ public class Turret : MonoBehaviour
     [SerializeField] private float weaponPower = 10f;
     [SerializeField] private float weaponCooldown = 2f;
     private float weaponCooldownLeft;
-    int shootCounter = 0;
     [SerializeField] List<int> teste;
     [SerializeField] List<ShootStyle> shootPattern;
+    [SerializeField] Item secondShot;
+    [SerializeField] Item thirdShot;
     [SerializeField] ShootCircularList shootList;
-    [SerializeField] Item currentShoot;
 
     [Header("Upgrades")]
     public bool[] upgrades = new bool[4];
@@ -48,7 +48,6 @@ public class Turret : MonoBehaviour
                 Debug.Log(e.Message);
             }
         }
-        currentShoot = shootList.first;
     }
 
 
@@ -80,6 +79,8 @@ public class Turret : MonoBehaviour
         //shootPattern[shootCounter].Shoot(direction, bulletSpawnPoint.position, bulletSpawnPoint.rotation, weaponPower);
         //shootCounter++;
         shootList.Shoot(direction, bulletSpawnPoint.position, bulletSpawnPoint.rotation, weaponPower);
+        secondShot = shootList.first.next;
+        thirdShot = secondShot.next;
         //if (shootCounter >= shootPattern.Count)
         //{
         //    shootCounter = 0;
@@ -106,5 +107,14 @@ public class Turret : MonoBehaviour
     {
         upgrades[3] = true;
         weaponCooldown /= fireSpeedReduction;
+    }
+
+    public ShootStyle GetShootStyle(int index)
+    {
+        return shootList.ElementAt(index);
+    }
+    public bool SetShootStyle(int index, ShootStyle style)
+    {
+        return shootList.ReplaceAt(style, index);
     }
 }

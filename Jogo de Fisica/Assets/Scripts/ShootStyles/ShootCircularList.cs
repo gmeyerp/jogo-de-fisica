@@ -8,6 +8,8 @@ public class ShootCircularList
 {
     public Item first;
     public Item last;
+    public Item second;
+    public Item third;
     public Item currentShooter;
     public int size { get; private set; }
 
@@ -58,10 +60,10 @@ public class ShootCircularList
         else
         {
             int i = 1;
-            Item current = first.next;
-            for (; i < index; i++, current = current.next) { };
+            Item current = first;
+            for (; i < index - 1; i++, current = current.next) { };
             aux.next = current.next;
-            current.next = aux;            
+            current.next = aux;
         }
         size++;
     }
@@ -160,10 +162,36 @@ public class ShootCircularList
         }        
     }
 
-    public void ReplaceAt(ShootStyle style, int index)
+    public bool ReplaceAt(ShootStyle style, int index)
     {
-        RemoveAt(index);
-        AddAt(style, index);
+        // Validating the index
+        if (index < 0 || size < index)
+        { throw new IndexOutOfRangeException(); }
+
+        // Finding the item at the index
+        Item item = first;
+        for (int i = 0; i != index; i++)
+        { item = item.next; }
+
+        // Validating the value
+        if (item.style == style)
+        { return false; }
+
+        // Changing the item
+        item.style = style;
+        return true;
+    }
+
+    public ShootStyle ElementAt(int index)
+    {
+        if (index < 0 || size <= index)
+        { Debug.LogError("Tentando acessar um índice inválido"); }
+
+        Item current = first;
+        for (int i = 0; i != index; i++)
+        { current = current.next; }
+
+        return current.style;
     }
 
     public void Shoot(Vector3 direction, Vector3 spawnPosition, Quaternion spawnRotation, float weaponPower)
