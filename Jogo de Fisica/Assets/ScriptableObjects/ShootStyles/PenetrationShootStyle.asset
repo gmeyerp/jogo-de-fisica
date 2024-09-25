@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PenetrationShootStyle
   m_EditorClassIdentifier: 
   prefab: {fileID: 4318257036888872559, guid: 16748b3e00ab1fc4e851f242eee8ecaf, type: 3}
-  sprite: {fileID: 21300000, guid: 181ae71c082641e4887be889fde439af, type: 3}
+  sprite: {fileID: 21300000, guid: 066e995658039ab46b5750427218d6c4, type: 3}
   price: 5

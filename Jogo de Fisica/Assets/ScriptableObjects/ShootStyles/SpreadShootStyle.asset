@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SpreadShootStyle
   m_EditorClassIdentifier: 
   prefab: {fileID: 5130647535341696154, guid: 379bab5f290880042a726cf51ded159e, type: 3}
-  sprite: {fileID: 21300000, guid: 8b6a15722efe6444296ccdd835327086, type: 3}
+  sprite: {fileID: 21300000, guid: a8bdfbf801b647748825ceca56ecd606, type: 3}
   price: 8
   angle: 30
