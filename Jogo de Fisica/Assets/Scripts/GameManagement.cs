@@ -7,7 +7,7 @@ using System;
 public class GameManagement : MonoBehaviour
 {
     public static GameManagement instance;
-    Vector3 lastSafePosition;
+    Transform lastSafePosition;
     [SerializeField] int playerHealth;
     [SerializeField] int playerMaxHealth;
     [SerializeField] int money = 0;
@@ -30,12 +30,12 @@ public class GameManagement : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    public void SetSafePosition(Vector3 position)
+    public void SetSafePosition(Transform safeSpot)
     {
-        lastSafePosition = position;
+        lastSafePosition = safeSpot;
     }
 
-    public Vector3 GetSafePosition()
+    public Transform GetSafePosition()
     {
         return lastSafePosition;
     }
