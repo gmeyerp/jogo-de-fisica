@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] int health = 5;
     [SerializeField] int coinValue = 1;
     [SerializeField] float speed;
+    bool isSlowed;
 
     [Header("Track")]
     [SerializeField] Track track;
@@ -110,4 +111,20 @@ public class Enemy : MonoBehaviour
     }
 
     public float TrackPercentageCovered => distanceTravelled / track.TotalDistance;
+
+    public void SlowDown(float amount, float duration)
+    {
+        isSlowed = true;
+        speed *= amount;
+    }
+
+    IEnumerator ReturnSpeed(float amount, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        if (isSlowed)
+        {
+            speed /= amount;
+            isSlowed = false;
+        }
+    }
 }

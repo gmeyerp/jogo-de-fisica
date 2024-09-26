@@ -59,7 +59,6 @@ public class GameManagement : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
-        Destroy(gameObject);
     }
 
     public void Retry()
@@ -94,15 +93,7 @@ public class GameManagement : MonoBehaviour
 
     public void Victory()
     {
-        int cena = SceneManager.GetActiveScene().buildIndex;
-        if (cena == 1)
-        {
-            SceneManager.LoadScene(2);
-        }
-        else
-        {
-            SceneManager.LoadScene("VictoryScene");
-        }        
+        GetNextLevel();       
     }
 
     public int GetPlayerHealth()
@@ -143,4 +134,26 @@ public class GameManagement : MonoBehaviour
     { 
         return lastScene;
     }
+
+    public void GetNextLevel()
+    {
+        int cena = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(cena + 1);
+        Destroy(gameObject);
+    }
+
+    public void DoubleShoot(float delay, Vector3 direction, Vector3 spawnPosition, Quaternion spawnRotation, float weaponPower, Bullet prefab)
+    {
+        StartCoroutine(DelayShoot(delay, direction, spawnPosition, spawnRotation, weaponPower, prefab));
+    }
+
+    IEnumerator DelayShoot(float delay, Vector3 direction, Vector3 spawnPosition, Quaternion spawnRotation, float weaponPower, Bullet prefab)
+    {
+        Debug.Log("waiting for double");
+        yield return new WaitForSeconds(delay);
+        Bullet bullet = Instantiate(prefab, spawnPosition, spawnRotation);
+        bullet.Shoot(direction * weaponPower);
+    }
+
+
 }
