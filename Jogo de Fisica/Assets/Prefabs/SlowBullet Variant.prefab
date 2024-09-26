@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6734856738586503063
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3693910473336143782, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fad9b39f091670b4a8ed61da75d412cb, type: 2}
+    - target: {fileID: 4503912852219433932, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503912852219433932, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.76470596
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503912852219433932, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.43921572
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503912852219433932, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503912852219433932, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.95294124
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503912852219433932, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130647535341696154, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: isSlow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130647535341696154, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: slowAmount
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130647535341696154, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: slowDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441154793714398228, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208181378746312352, guid: 379bab5f290880042a726cf51ded159e, type: 3}
+      propertyPath: m_Name
+      value: SlowBullet Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 379bab5f290880042a726cf51ded159e, type: 3}

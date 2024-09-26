@@ -35,4 +35,9 @@ public class UIButtons : MonoBehaviour
         GameManagement.instance.Retry();
     }
 
+    public void CheatNextLevel()
+    {
+        GameManagement.instance.GetNextLevel();
+    }
+
 }

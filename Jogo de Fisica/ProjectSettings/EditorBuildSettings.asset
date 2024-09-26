@@ -15,10 +15,13 @@ EditorBuildSettings:
     path: Assets/Scenes/02 Level.unity
     guid: 5b309f69a01633d46bea417522a63609
   - enabled: 1
-    path: Assets/Scenes/GameOverScene.unity
-    guid: ff5b947710330054887cd7b6af27a940
+    path: Assets/Scenes/03 Level.unity
+    guid: 655cef4862d151043b5181746ffd7928
   - enabled: 1
     path: Assets/Scenes/VictoryScene.unity
     guid: bf4449bb6c6d91941b71276eeb67d43e
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: ff5b947710330054887cd7b6af27a940
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8e77e4b6ecc454e4a9f075ec3a2fec37, type: 2}

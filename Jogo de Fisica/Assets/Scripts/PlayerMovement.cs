@@ -128,10 +128,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.gameObject.layer == 7)
         {
-            if (!collision.collider.gameObject.TryGetComponent<TurretBlock>(out _))
-            {
-                GameManagement.instance.SetSafePosition(collision.collider.gameObject.transform.position - Vector3.forward);
-            }
+                GameManagement.instance.SetSafePosition(collision.collider.gameObject.transform);
         }
     }
 
