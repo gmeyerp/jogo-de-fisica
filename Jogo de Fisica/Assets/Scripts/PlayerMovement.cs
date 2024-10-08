@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float maxTurretSpeed = 10f;
     [SerializeField] float turretForce = 2f;
     Vector3 movement;
-    bool isGrounded;
+    public bool isGrounded { get; private set; }
     bool isMovementEnabled;
     TurretBlock mount;
 
