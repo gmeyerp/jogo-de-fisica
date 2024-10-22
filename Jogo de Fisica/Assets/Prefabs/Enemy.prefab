@@ -238,8 +238,9 @@ MonoBehaviour:
   rb: {fileID: 3764433093470450743}
   maxHealth: 4
   health: 4
-  coinValue: 1
   speed: 2.8
+  drops:
+  - {fileID: 264299491790144472, guid: 5f9c867ad66fef0439188a1774a4f78d, type: 3}
   track: {fileID: 0}
   deathVFX: {fileID: 1903233073272734474, guid: 4838cc04184aa1d4d9bb0592a686265b, type: 3}
   turretDamageVFX: {fileID: 3598460049281718044, guid: 181438b722be7f54aaaa361f91ff8506, type: 3}

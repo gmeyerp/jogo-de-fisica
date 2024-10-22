@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float invincibilityTime = 1f;
     bool isInvincible;
 
+    [Header("Coins")]
+    [SerializeField] CoinStack coinStack;
+
     [Header("FX")]
     [SerializeField] ParticleSystem jumpVFX;
 
@@ -154,6 +157,8 @@ public class PlayerMovement : MonoBehaviour
         rb.isKinematic = true;
         ChangeBuyStatus(true);
         block.Mount(transform);
+
+        coinStack.Collect();
     }
 
     private void Dismount()
