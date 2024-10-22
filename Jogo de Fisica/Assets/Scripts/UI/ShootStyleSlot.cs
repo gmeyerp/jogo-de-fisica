@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShootStyleSlot : DropTarget<ShootStyle>
+public class ShootStyleSlot : DragDropTarget<ShootStyle>
 {
     [SerializeField] private int styleIndex;
     [SerializeField] private UpgradeCanvas upgradeCanvas;

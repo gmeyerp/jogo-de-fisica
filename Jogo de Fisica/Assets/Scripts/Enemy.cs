@@ -9,9 +9,9 @@ public class Enemy : MonoBehaviour
     [Header("General")]
     [SerializeField] int maxHealth = 5;
     [SerializeField] int health = 5;
-    [SerializeField] int coinValue = 1;
     [SerializeField] float speed;
     bool isSlowed;
+    [SerializeField] Drop[] drops;
 
     [Header("Track")]
     [SerializeField] Track track;
@@ -89,9 +89,13 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        GameManagement.instance.ChangeMoney(coinValue);
         Instantiate(deathVFX, transform.position, deathVFX.transform.rotation);
         Destroy(gameObject);
+
+        for (int i = 0; i < drops.Length; i++)
+        {
+            Instantiate(drops[i], transform.position, Quaternion.identity);
+        }
     }
 
     public void TakeDamage(int damage)
