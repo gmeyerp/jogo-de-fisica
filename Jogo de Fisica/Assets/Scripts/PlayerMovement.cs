@@ -13,12 +13,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
-    [SerializeField] float maxTurretSpeed = 10f;
-    [SerializeField] float turretForce = 2f;
     Vector3 movement;
     public bool isGrounded { get; private set; }
     [SerializeField] private bool isMovementEnabled;
+
+    [Header("Mount")]
     [SerializeField] private TurretBlock mount;
+    [SerializeField] float maxTurretSpeed = 10f;
+    [SerializeField] float turretForce = 2f;
+    [SerializeField] private float mountCooldown = 1f;
+    private float mountCooldownLeft;
+
 
     [Header("Damage")]
     [SerializeField] float invincibilityTime = 1f;
@@ -59,6 +64,11 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 movementInput = moveAction.ReadValue<Vector2>();
         movement = new Vector3(movementInput.x, 0, movementInput.y);
+
+        if (mountCooldownLeft > Time.deltaTime)
+        { mountCooldownLeft -= Time.deltaTime; }
+        else
+        { mountCooldownLeft = 0; }
     }
 
     private void FixedUpdate()
@@ -72,28 +82,21 @@ public class PlayerMovement : MonoBehaviour
         if (movement == Vector3.zero) return;
 
         if (mount == null)
-        {
-            Move(movement * speed);
-        }
+        { Move(movement * speed); }
         else
-        {
-            mount.Move(movement * turretForce, maxTurretSpeed);
-        }
+        { mount.Move(movement * turretForce, maxTurretSpeed); }
     }
 
     private void OnJump(InputAction.CallbackContext context)
     {
         if (!isMovementEnabled) return;
         if (!isGrounded) return;
-
+        
         if (mount == null)
-        {
-            Jump();
-        }
+        { Jump(); }
         else
-        {
-            Dismount();
-        }
+        { Dismount(); }
+
         jumpVFX.Play();
     }
 
@@ -122,7 +125,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.collider.gameObject.TryGetComponent(out TurretBlock turret))
         {
-            Mount(turret);
+            if (mountCooldownLeft == 0)
+            {
+                mountCooldownLeft = mountCooldown;
+                Mount(turret);
+            }
         }
     }
 
@@ -154,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
         mount = block;
 
         rb.isKinematic = true;
-        //ChangeBuyStatus(true);
+        ChangeBuyStatus(true);
         block.Mount(transform);
 
         coinStack.Collect();
@@ -164,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
     {
         mount.Dismount();
         rb.isKinematic = false;
-        //ChangeBuyStatus(false);
+        ChangeBuyStatus(false);
 
         float dismountForce = jumpForce * 1.2f;
         Launch(/*mount.Velocity + */(Vector3.up * dismountForce));
@@ -177,7 +184,11 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(transform.up * windForce * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }
 
-    void ChangeBuyStatus(bool status) => GameCanvas.instance.UpgradeButtonStatus(status, mount.turret);
+    void ChangeBuyStatus(bool status)
+    {
+        if (mount.turret != null)
+        { GameCanvas.instance.UpgradeButtonStatus(status, mount.turret); }
+    }
 
     IEnumerator InvincibilityOn(float time)
     {
