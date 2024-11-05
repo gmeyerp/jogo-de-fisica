@@ -47,7 +47,13 @@ public class TurretCannon : MonoBehaviour
     {
         Vector3 force = direction.normalized * weaponPower;
         glove.AddForce(force, ForceMode.Impulse);
+    }
 
-        Debug.Log("shot");
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            Debug.Log("kb on glove");
+        }
     }
 }

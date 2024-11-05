@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
     [Header("General")]
     [SerializeField] int maxHealth = 5;
     [SerializeField] int health = 5;
-    [SerializeField] float speed;
+    [SerializeField] float baseSpeed;
+    float speed;
     bool isSlowed;
     [SerializeField] Drop[] drops;
 
@@ -29,11 +30,17 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        speed = baseSpeed;
         transform.LookAt(track.Waypoints[nextWaypointIndex].transform);
     }
 
     private void Update()
     {
+        if (baseSpeed - speed > Time.deltaTime)
+        { speed += 1.5f * baseSpeed * Time.deltaTime; }
+        else
+        { speed = baseSpeed; }
+
         direction = track.Waypoints[nextWaypointIndex].position - transform.position;
         if (direction.magnitude < 0.1f)
         {
@@ -75,6 +82,11 @@ public class Enemy : MonoBehaviour
         {
             DealDamage();
         }
+        else if (collision.collider.CompareTag("Glove"))
+        {
+            TakeKnockback();
+            Debug.Log("kb on enemy");
+        }
     }
 
     private void OnDestroy()
@@ -85,6 +97,11 @@ public class Enemy : MonoBehaviour
     void DealDamage()
     {
         PlayerMovement.instance.TakeDamage();
+    }
+
+    private void TakeKnockback()
+    {
+        speed = -baseSpeed;
     }
 
     public void Die()
