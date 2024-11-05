@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float turretForce = 2f;
     Vector3 movement;
     public bool isGrounded { get; private set; }
-    bool isMovementEnabled;
-    TurretBlock mount;
+    [SerializeField] private bool isMovementEnabled;
+    [SerializeField] private TurretBlock mount;
 
     [Header("Damage")]
     [SerializeField] float invincibilityTime = 1f;
@@ -86,7 +86,6 @@ public class PlayerMovement : MonoBehaviour
         if (!isMovementEnabled) return;
         if (!isGrounded) return;
 
-
         if (mount == null)
         {
             Jump();
@@ -153,9 +152,9 @@ public class PlayerMovement : MonoBehaviour
     private void Mount(TurretBlock block)
     {
         mount = block;
-        
+
         rb.isKinematic = true;
-        ChangeBuyStatus(true);
+        //ChangeBuyStatus(true);
         block.Mount(transform);
 
         coinStack.Collect();
@@ -165,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
     {
         mount.Dismount();
         rb.isKinematic = false;
-        ChangeBuyStatus(false);
+        //ChangeBuyStatus(false);
 
         float dismountForce = jumpForce * 1.2f;
         Launch(/*mount.Velocity + */(Vector3.up * dismountForce));
