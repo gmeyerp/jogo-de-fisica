@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8093837384818229630}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: StackPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2394768191835202833}
   - component: {fileID: 264299491790144472}
   - component: {fileID: 8750721449336207230}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Coin
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 357851105103472966}
   - component: {fileID: 7746300653880903387}
   - component: {fileID: 1919953699617617987}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

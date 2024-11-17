@@ -10,9 +10,9 @@ public class TurretBlock : MonoBehaviour
     [SerializeField] protected Transform mountPivot;
     public Turret turret;
     //private Transform riderOriginalParent;
-    private Transform rider;
+    protected Transform rider;
 
-    private void Update()
+    protected void Update()
     {
         if (rider != null)
         {
@@ -27,6 +27,7 @@ public class TurretBlock : MonoBehaviour
     {
         if (rigidbody.velocity.magnitude < maxSpeed)
         {
+            Debug.Log(force);
             rigidbody.AddForce(force, ForceMode.Force);
         }
     }

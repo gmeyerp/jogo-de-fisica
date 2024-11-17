@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     private void HandleMovement()
     {
         if (!isMovementEnabled) return;
-        if (movement == Vector3.zero) return;
+        //if (movement == Vector3.zero) return;
 
         if (mount == null)
         { Move(movement * speed); }
