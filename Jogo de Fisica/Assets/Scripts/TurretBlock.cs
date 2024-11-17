@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class TurretBlock : MonoBehaviour
 {
-    [SerializeField] private new Rigidbody rigidbody;
-
-    [SerializeField] private Transform mountPivot;
+    [SerializeField] protected new Rigidbody rigidbody;
+                     
+    [SerializeField] protected Transform mountPivot;
     public Turret turret;
     //private Transform riderOriginalParent;
     private Transform rider;
@@ -23,7 +23,7 @@ public class TurretBlock : MonoBehaviour
         }
     }
 
-    public void Move(Vector3 force, float maxSpeed)
+    public virtual void Move(Vector3 force, float maxSpeed)
     {
         if (rigidbody.velocity.magnitude < maxSpeed)
         {
