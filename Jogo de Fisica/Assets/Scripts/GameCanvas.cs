@@ -78,7 +78,7 @@ public class GameCanvas : MonoBehaviour
         }
         else
         {
-            UpgradeCanvas.instance.RefreshButtons(upgradeTarget);
+            UpgradeCanvas.instance.CheckButtonStatus(upgradeTarget);
             upgradeCanvas.gameObject.SetActive(true);
         }              
     }

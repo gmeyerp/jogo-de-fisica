@@ -34,8 +34,12 @@ public class Turret : MonoBehaviour
     [SerializeField] float fireSpeedReduction = 1.2f;
     [SerializeField] int fireSpeedIncreaseCost = 5;
 
+    [Header("Skill Tree")]
+    public List<ITreeUpgrade> upgradeList;
+
     public void Start()
     {
+        upgradeList = new List<ITreeUpgrade>();
         //deve ser possivel resolver isso usando Scriptable Object para armazenar o setup inicial das turrets e evitar essa lista nativa
         foreach (ShootStyle shootStyle in shootPattern) //fiz essa solucao feia pra ficar mais facil montar o estado inicial das turrets pelo editor
         {

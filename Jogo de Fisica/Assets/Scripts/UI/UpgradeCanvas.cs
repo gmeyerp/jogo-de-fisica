@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public class UpgradeCanvas : MonoBehaviour
 {
     public static UpgradeCanvas instance;
-    Turret targetTurret;
+    public Turret targetTurret;
     [SerializeField] Button[] upgradeButtons;
     [SerializeField] Image[] upgradeBaseImage;
     [SerializeField] TextMeshProUGUI[] upgradeText;
     [SerializeField] Sprite doneImage;
     [SerializeField] Sprite baseImage;
+    //Skill Tree
+    [SerializeField] SkillTreeButton rootButton;
 
     public void Awake()
     {
@@ -53,6 +55,15 @@ public class UpgradeCanvas : MonoBehaviour
         }
     }
 
+    public void CheckButtonStatus(Turret targetTurret)
+    {
+        this.targetTurret = targetTurret;
+        rootButton.MakeButtonInteractable();
+    }
+
+    //Abaixo daqui sao
+    //Opcoes anteriores
+    //Mantive porque nao devem afetar o funcionamento
     public void SetTargetTurret(Turret targetTurret)
     {
         this.targetTurret = targetTurret;
