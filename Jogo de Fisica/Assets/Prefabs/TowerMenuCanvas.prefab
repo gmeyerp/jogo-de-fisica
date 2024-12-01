@@ -2677,11 +2677,11 @@ PrefabInstance:
       objectReference: {fileID: 7504313258842159544}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Empurr\xE3o"
+      value: Empurrao
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 42.9
+      value: 46.65
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -3314,11 +3314,11 @@ PrefabInstance:
       objectReference: {fileID: 2016330029527415442}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Chance Cr\xEDtica"
+      value: Chance Critica
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 31
+      value: 31.45
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -3795,11 +3795,11 @@ PrefabInstance:
       objectReference: {fileID: 7606013495545614006}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Mais Penetra\xE7\xE3o"
+      value: "Mais Penetra\xE7ao"
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 26.75
+      value: 27.25
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -4122,11 +4122,11 @@ PrefabInstance:
       objectReference: {fileID: 3962442439028046166}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Lentid\xE3o Forte"
+      value: Lentidao Forte
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 29.1
+      value: 29.7
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -4449,11 +4449,11 @@ PrefabInstance:
       objectReference: {fileID: 2204511966555087939}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Empurr\xE3o Forte"
+      value: Empurrao Forte
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 26.9
+      value: 27.4
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -4612,11 +4612,11 @@ PrefabInstance:
       objectReference: {fileID: 7439349182108227004}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Tiro R\xE1pido"
+      value: Tiro Rapido
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 39.95
+      value: 41.15
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -4775,11 +4775,11 @@ PrefabInstance:
       objectReference: {fileID: 8313631184644422470}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Penetra\xE7\xE3o"
+      value: "Penetra\xE7ao"
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 39.6
+      value: 40.75
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -5097,11 +5097,11 @@ PrefabInstance:
       objectReference: {fileID: 3004969507080435740}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Lentid\xE3o"
+      value: Lentidao
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 42.9
+      value: 47.9
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -5261,11 +5261,11 @@ PrefabInstance:
       objectReference: {fileID: 75893447762703888}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Empurr\xE3o"
+      value: Empurrao
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 42.9
+      value: 46.65
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -5416,11 +5416,11 @@ PrefabInstance:
       objectReference: {fileID: 8455219645552752761}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Tiro Explos\xE3o"
+      value: Tiro Explosao
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 32.05
+      value: 32.8
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -5721,11 +5721,11 @@ PrefabInstance:
       objectReference: {fileID: 6782378239471817135}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Bala R\xE1pida"
+      value: Bala Rapida
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 40.5
+      value: 41.7
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -6374,11 +6374,11 @@ PrefabInstance:
       objectReference: {fileID: 7376420772424708078}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: "Lentid\xE3o Longa"
+      value: Lentidao Longa
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 29.55
+      value: 30.15
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
