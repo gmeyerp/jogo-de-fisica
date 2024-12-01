@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.05
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -291,6 +291,7 @@ MonoBehaviour:
   originalColor: {r: 1, g: 0.68235296, b: 0.9686275, a: 1}
   isPurchased: 0
   selfButton: {fileID: 4309678534175464416}
+  image: {fileID: 0}
 --- !u!114 &5668965098299421710
 MonoBehaviour:
   m_ObjectHideFlags: 0

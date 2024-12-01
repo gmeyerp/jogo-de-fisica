@@ -298,9 +298,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: -2640208906844572657}
-  bulletDamage: 1
+  damage: 1
+  initialForce: 10
   penetration: 0
-  lifeSpan: 1
+  isSlow: 0
+  slowDuration: 0
+  slowAmount: 0
+  knockback: 0
+  critChance: 0
+  isCrit: 0
+  lifeSpan: 5
 --- !u!54 &-2640208906844572657
 Rigidbody:
   m_ObjectHideFlags: 0

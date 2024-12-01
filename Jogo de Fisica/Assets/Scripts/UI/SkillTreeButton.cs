@@ -30,18 +30,13 @@ public class SkillTreeButton : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void MakeButtonInteractable()
     {
         selfButton.interactable = true;
         isPurchased = false;
         image.color = originalColor;
-        if (UpgradeCanvas.instance.targetTurret.upgradeList.Contains(upgrade))
+
+        if (UpgradeCanvas.instance.targetTurret.boughtUpgrades.Contains(upgrade))
         {
             isPurchased = true;
             image.color = purchaseColor;
@@ -92,7 +87,6 @@ public class SkillTreeButton : MonoBehaviour
         {
             upgrade = GetComponent<ITreeUpgrade>();
         }
-        UpgradeCanvas.instance.targetTurret.upgradeList.Add(upgrade);
         upgrade.UpgradeTurret(UpgradeCanvas.instance.targetTurret);
         foreach (SkillTreeButton button in dependants)
         {
