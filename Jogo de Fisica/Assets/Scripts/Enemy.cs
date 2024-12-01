@@ -85,7 +85,6 @@ public class Enemy : MonoBehaviour
         else if (collision.collider.CompareTag("Glove"))
         {
             TakeKnockback();
-            Debug.Log("kb on enemy");
         }
     }
 
@@ -99,11 +98,6 @@ public class Enemy : MonoBehaviour
         PlayerMovement.instance.TakeDamage();
     }
 
-    private void TakeKnockback()
-    {
-        speed = -baseSpeed;
-    }
-
     public void Die()
     {
         Instantiate(deathVFX, transform.position, deathVFX.transform.rotation);
@@ -111,7 +105,8 @@ public class Enemy : MonoBehaviour
 
         for (int i = 0; i < drops.Length; i++)
         {
-            Instantiate(drops[i], transform.position, Quaternion.identity);
+            if (Random.value < .5f)
+            { Instantiate(drops[i], transform.position, Quaternion.identity); }
         }
     }
 
@@ -122,6 +117,12 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void TakeKnockback() => TakeKnockback(baseSpeed * 2);
+    public void TakeKnockback(float force)
+    {
+        speed = Mathf.Max(speed - force, -baseSpeed);
     }
 
     public Enemy Instantiate(Track track)
@@ -139,13 +140,12 @@ public class Enemy : MonoBehaviour
         speed *= amount;
     }
 
-    IEnumerator ReturnSpeed(float amount, float duration)
+    public void MultiplySpeed(float multiplier, float duration)
+    { StartCoroutine(Coroutine_TemporarySpeed(multiplier, duration)); }
+    IEnumerator Coroutine_TemporarySpeed(float multiplier, float duration)
     {
+        speed *= multiplier;
         yield return new WaitForSeconds(duration);
-        if (isSlowed)
-        {
-            speed /= amount;
-            isSlowed = false;
-        }
+        speed /= multiplier;
     }
 }

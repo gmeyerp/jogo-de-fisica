@@ -7,12 +7,15 @@ using UnityEngine.UI;
 public class UpgradeCanvas : MonoBehaviour
 {
     public static UpgradeCanvas instance;
-    Turret targetTurret;
+    public Turret targetTurret;
     [SerializeField] Button[] upgradeButtons;
     [SerializeField] Image[] upgradeBaseImage;
     [SerializeField] TextMeshProUGUI[] upgradeText;
     [SerializeField] Sprite doneImage;
     [SerializeField] Sprite baseImage;
+
+    [Header("Skill Tree")]
+    [SerializeField] SkillTreeButton firstSkill;
 
     public void Awake()
     {
@@ -31,6 +34,7 @@ public class UpgradeCanvas : MonoBehaviour
             Debug.Log("Referencia de Turret nula");
             return;
         }
+
         for (int i = 0; i < targetTurret.upgrades.Length; i++)
         {
             if (targetTurret.upgrades[i])
@@ -51,6 +55,8 @@ public class UpgradeCanvas : MonoBehaviour
                 }
             }
         }
+
+        firstSkill.MakeButtonInteractable();
     }
 
     public void SetTargetTurret(Turret targetTurret)

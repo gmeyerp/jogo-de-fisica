@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private new Rigidbody rigidbody;
-    [SerializeField] int bulletDamage = 1;
-    [SerializeField] bool penetration;
+    [SerializeField] int damage = 1;
+    [SerializeField] float initialForce = 10f;
+    [SerializeField] int penetration;
     [SerializeField] bool isSlow;
     [SerializeField] float slowDuration;
     [SerializeField] float slowAmount;
+    [SerializeField] float knockback;
+    [SerializeField] float critChance;
+    [SerializeField] bool isCrit;
 
     [SerializeField] private float lifeSpan = 5f;
     private float lifeSpanLeft;
@@ -33,36 +38,48 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null)
+            if (other.TryGetComponent(out Enemy enemy))
             {
-                enemy.TakeDamage(bulletDamage);
-            }
-            if (!penetration)
-            {
-                Destroy(gameObject);
-            }
-            if (isSlow)
-            {
-                enemy.SlowDown(slowAmount, slowDuration);
+                HitEnemy(enemy);
+
+                if (penetration > 0)
+                { penetration--; }
+                else
+                { Destroy(gameObject); }
             }
         }
     }
 
-    public void Shoot(Vector3 force)
+    private void HitEnemy(Enemy enemy)
     {
-        rigidbody.AddForce(force, ForceMode.VelocityChange);
+        int damage = this.damage;
+
+        if (isCrit)
+        { damage *= 2; }
+
+        enemy.TakeDamage(damage);
+
+        if (slowAmount > 0)
+        { enemy.MultiplySpeed(1 / slowAmount, slowDuration); }
+
+        if (knockback > 0)
+        { enemy.TakeKnockback(knockback); }
+    }
+
+    public void Shoot(Vector3 direction)
+    {
+        rigidbody.AddForce(direction.normalized * initialForce, ForceMode.VelocityChange);
         lifeSpan = lifeSpanLeft;
     }
 
     public void PenetrationOn()
     {
-        penetration = true;
+        penetration = 1;
     }
 
     public void DamageIncrease()
     {
-        bulletDamage++;
+        damage++;
     }
 
     public void SlowOn()
@@ -73,7 +90,7 @@ public class Bullet : MonoBehaviour
     public void ShootBaseBullet(float delay, Vector3 direction, Vector3 spawnPosition, Quaternion spawnRotation, float weaponPower, Bullet prefab)
     {
         GameManagement.instance.DoubleShoot(delay, direction, spawnPosition, spawnRotation, weaponPower, prefab);
-    }    
+    }
 
     public void Explode(float radius, GameObject vfx)
     {
@@ -81,13 +98,34 @@ public class Bullet : MonoBehaviour
         Collider[] enemies = Physics.OverlapSphere(transform.position, radius); //depois tem que colocar pra targetar só enemy
         foreach (Collider e in enemies)
         {
-            Enemy enemy = e.gameObject.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                 enemy.TakeDamage(bulletDamage);
-            }
+            if (e.gameObject.TryGetComponent(out Enemy enemy))
+            { HitEnemy(enemy); }
         }
         Destroy(gameObject);
     }
 
+    private void RollCrit()
+    { isCrit = Random.value < critChance; }
+
+    public int Damage { get => damage; set => damage = value; }
+    public float InitialForce { get => initialForce; set => initialForce = value; }
+    public (float Amount, float Duration) Slow { get => (slowAmount, slowDuration); set => (slowAmount, slowDuration) = value; }
+    public float Knockback { get => knockback; set => knockback = value; }
+    public float CritChance { get => critChance; set => critChance = value; }
+    public int Penetration { get => penetration; set => penetration = value; }
+
+    static public Bullet Shoot(Bullet prefab, Vector3 position, Vector3 direction, HashSet<ITreeBulletUpgrade> upgrades)
+    {
+        Bullet bullet = Instantiate(prefab, position, Quaternion.LookRotation(direction));
+
+        foreach (ITreeBulletUpgrade upgrade in upgrades)
+        { upgrade.UpgradeBullet(bullet); }
+        bullet.RollCrit();
+
+        Debug.Log(direction);
+
+        bullet.Shoot(direction);
+
+        return bullet;
+    }
 }

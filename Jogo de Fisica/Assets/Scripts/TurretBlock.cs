@@ -25,7 +25,7 @@ public class TurretBlock : MonoBehaviour
 
     public void Move(Vector3 force, float maxSpeed)
     {
-        if (rigidbody.velocity.magnitude < maxSpeed)
+        if (turret.canMove && rigidbody.velocity.magnitude < maxSpeed)
         {
             rigidbody.AddForce(force, ForceMode.Force);
         }
