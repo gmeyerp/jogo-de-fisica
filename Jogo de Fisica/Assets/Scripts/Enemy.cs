@@ -105,7 +105,8 @@ public class Enemy : MonoBehaviour
 
         for (int i = 0; i < drops.Length; i++)
         {
-            Instantiate(drops[i], transform.position, Quaternion.identity);
+            if (Random.value < .5f)
+            { Instantiate(drops[i], transform.position, Quaternion.identity); }
         }
     }
 
