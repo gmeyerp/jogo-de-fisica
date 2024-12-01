@@ -2663,17 +2663,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a05db1c79a7bdc84a96997573072f0c7, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
       value: 
       objectReference: {fileID: 7504313258842159544}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Empurr\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 42.9
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -3120,9 +3128,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 051adee3fcd403b4099303992fa1a800, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -3137,8 +3149,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4319207343557390710}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: Tiro Duplo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 43.85
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -3276,9 +3292,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44b34472be9b4da42a438f360cf3dab8, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -3293,8 +3313,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2016330029527415442}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Chance Cr\xEDtica"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -3431,17 +3455,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9368b0676f2ee4f4487e05a531a3c28c, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
       value: 
       objectReference: {fileID: 6734139039356767583}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: Tiro Rapidasso
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 31.55
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -3578,9 +3610,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 753980abff9a73f4fa914665f1bd2576, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -3603,8 +3639,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7415050102947799567}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: Mais Dano
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 45.9
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -3741,17 +3781,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 61cc68b68adc44a4e9700b461c3b09c7, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
       value: 
       objectReference: {fileID: 7606013495545614006}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Mais Penetra\xE7\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 26.75
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -3888,9 +3936,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58a83edb8b8f0eb4eb88b7e42daa0570, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -3905,8 +3957,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2957988666185677403}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: Tiro Leque
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 42.6
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -4044,9 +4100,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae9acac24cf621c49a6ba011ef86a8f4, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -4061,8 +4121,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3962442439028046166}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Lentid\xE3o Forte"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 29.1
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -4371,17 +4435,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1761487fcf89d54582a13a0ec9412c6, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
       value: 
       objectReference: {fileID: 2204511966555087939}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Empurr\xE3o Forte"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 26.9
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -4518,9 +4590,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fa5d593a0fd72f549aecbe06816dd199, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -4535,8 +4611,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7439349182108227004}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Tiro R\xE1pido"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 39.95
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -4673,9 +4753,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f51e46d9734f93d45b95462419c66eb7, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -4690,8 +4774,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8313631184644422470}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Penetra\xE7\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 39.6
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -4828,17 +4916,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 64c34400f5754dd499b52edda0851252, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
       value: 
       objectReference: {fileID: 5375339297124254722}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: Mais Chance
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 37.05
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -4975,9 +5071,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a62bec77046b664aa6d11fdeda47c17, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -4996,8 +5096,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3004969507080435740}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Lentid\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 42.9
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -5135,9 +5239,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a05db1c79a7bdc84a96997573072f0c7, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -5152,8 +5260,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 75893447762703888}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Empurr\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 42.9
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -5290,17 +5402,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5341aa03f9f23064babadc0d9a3495ae, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
       value: 
       objectReference: {fileID: 8455219645552752761}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Tiro Explos\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 32.05
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -5438,6 +5558,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d22d9f6496d1bdc4c96373f74fb250d1, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: dependants.Array.size
       value: 3
@@ -5571,9 +5695,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a5ff000c2499094cb53e5686237fb71, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -5593,11 +5721,11 @@ PrefabInstance:
       objectReference: {fileID: 6782378239471817135}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_text
-      value: Velocidade +
+      value: "Bala R\xE1pida"
       objectReference: {fileID: 0}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 37.75
+      value: 40.5
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -5905,9 +6033,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1710463fa5bbafe4b92a1e4596033310, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -5922,8 +6054,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5636645761794930384}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: Mais Mais Dano
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 29.5
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -6060,9 +6196,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 99fe179f1036c404cbc446c23b3e0188, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
@@ -6077,8 +6217,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 638776262660514165}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: Tiro Triplo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 40.1
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name
@@ -6216,17 +6360,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4417059908972248881, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1191fa2ba4b4d2741a0f92555ea0c036, type: 3}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: price
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5229420587760933634, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: upgrade
       value: 
       objectReference: {fileID: 7376420772424708078}
     - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
+      propertyPath: m_text
+      value: "Lentid\xE3o Longa"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294997411915762809, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_fontSize
-      value: 47.9
+      value: 29.55
       objectReference: {fileID: 0}
     - target: {fileID: 5501510568875990594, guid: c9ce97e861f2e8e4da1179a416a8d55a, type: 3}
       propertyPath: m_Name

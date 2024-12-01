@@ -38,28 +38,32 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null)
+            if (other.TryGetComponent(out Enemy enemy))
             {
-                int damage = this.damage;
+                HitEnemy(enemy);
 
-                if (isCrit)
-                { damage *= 2; }
-
-                enemy.TakeDamage(damage);
+                if (penetration > 0)
+                { penetration--; }
+                else
+                { Destroy(gameObject); }
             }
-
-            if (slowAmount > 0)
-            { enemy.MultiplySpeed(1/slowAmount, slowDuration); }
-
-            if (knockback > 0)
-            { enemy.TakeKnockback(knockback); }
-
-            if (penetration > 0)
-            { penetration--; }
-            else
-            { Destroy(gameObject); }
         }
+    }
+
+    private void HitEnemy(Enemy enemy)
+    {
+        int damage = this.damage;
+
+        if (isCrit)
+        { damage *= 2; }
+
+        enemy.TakeDamage(damage);
+
+        if (slowAmount > 0)
+        { enemy.MultiplySpeed(1 / slowAmount, slowDuration); }
+
+        if (knockback > 0)
+        { enemy.TakeKnockback(knockback); }
     }
 
     public void Shoot(Vector3 direction)
@@ -94,11 +98,8 @@ public class Bullet : MonoBehaviour
         Collider[] enemies = Physics.OverlapSphere(transform.position, radius); //depois tem que colocar pra targetar só enemy
         foreach (Collider e in enemies)
         {
-            Enemy enemy = e.gameObject.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
+            if (e.gameObject.TryGetComponent(out Enemy enemy))
+            { HitEnemy(enemy); }
         }
         Destroy(gameObject);
     }
